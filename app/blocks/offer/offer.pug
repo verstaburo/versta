@@ -1,0 +1,15 @@
+mixin offer(data)
+  +b.SECTION.offer&attributes(attributes)
+    .container
+      if data.image
+        +e.image
+          img(src=data.image)
+
+      if data.title
+        +e.H1.title!= data.title
+
+      if data.text
+        +e.P.text!= data.text
+
+      if data.button
+        +button()(href=data.button.link).__button!= data.button.text

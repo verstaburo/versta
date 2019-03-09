@@ -3,11 +3,11 @@
 // ##########
 // Базовые настройки сетки сайта
 // ##########
-$container-width: 960px; // Максимальная ширина контейнера контента
-$container-padding: 20px; // Отступы слева и справа у контейнера
+$container-width: 1400px; // Максимальная ширина контейнера контента
+$container-padding: 80px; // Отступы слева и справа у контейнера
 $grid-container-width: 100%; // Ширина контейнера сетки
 $grid-cols: 12; // Количество колонок в сетке
-$grid-gap: 20px; // Расстояние между колонками
+$grid-gap: 80px; // Расстояние между колонками
 $grid-gap-vertical: 20px; // Расстояние между строками в сетке
 $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
 $breakpoints: (
@@ -21,19 +21,26 @@ $breakpoints: (
 // ##########
 // Цвета
 // ##########
-$color-basic: black; // Основной цвет текста (применяется к body)
-$color-placeholder: #777; // Основной цвет для placeholder
-$color-input: black; // Основной цвет input, select и textarea
-$color-main: #2252d8; // Основной фирменный цвет
+$color-main: #c1ad78; // Основной фирменный цвет
+$color-main-light: #e3c26a;
+$color-black: black;
+$color-white: white;
+$color-grey: #ababab;
+$color-grey-light: #ccc;
+
+$color-basic: $color-white; // Основной цвет текста (применяется к body)
+$color-placeholder: $color-grey; // Основной цвет для placeholder
+$color-input: $color-black; // Основной цвет input, select и textarea
 $color-border: #ccc; // Основной цвет границ таблиц, секций
 
 // ##########
 // Transitions
 // ##########
-$ease-main: .3s ease;
+$ease-main: .2s ease;
+$ease-long: .3s ease;
 
 // ##########
 // Шрифты
 // ##########
-$font-main: Arial, sans-serif; // Основной шрифт сайта
-$font-second: Times New Roman, sans-serif; // Дополнительный шрифт
+$font-main: 'Muller', sans-serif; // Основной шрифт сайта
+$font-second: 'Oswald', sans-serif; // Основной шрифт сайта

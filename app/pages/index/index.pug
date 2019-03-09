@@ -1,7 +1,30 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = 'Versta Project Template'
+  - var pageTitle = 'Versta — Front-end Development Bureau'
 
 block content
-  +b.index
+  +header
+  +offer(getData('offer').index)
+  +section
+    +section-header('Our works', 'What we do')
+    +section-content
+      +grid
+        +col({xl: 4})
+          +work('Credit Europe Bank', 'assets/images/works/case1.png')(href="#")
+        +col({xl: 4})
+          +work('MyBI Business Analytics', 'assets/images/works/case2.png')(href="#")
+        +col({xl: 4})
+          +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")
+      +action('Have a project?', 'Get estimation of cost and terms within an hour', 'Send a project')
+
+  +section
+    +section-header('Our works', 'What we do')
+    +section-content
+      +grid
+        +col({xl: 4})
+          +work('Credit Europe Bank', 'assets/images/works/case1.png')(href="#")
+        +col({xl: 4})
+          +work('MyBI Business Analytics', 'assets/images/works/case2.png')(href="#")
+        +col({xl: 4})
+          +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")

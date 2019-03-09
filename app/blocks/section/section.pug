@@ -1,0 +1,21 @@
+mixin section()
+  +b.section&attributes(attributes)
+    .container
+      block
+
+mixin section-header(title, pretitle)
+  +e.header&attributes(attributes)
+    if pretitle
+      +e.P.pretitle!= pretitle
+
+    if title
+      +e.H2.title!= title
+
+    if text
+      +e.P.text!= text
+
+    block
+
+mixin section-content()
+  +e.content&attributes(attributes)
+    block

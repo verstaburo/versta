@@ -1,0 +1,16 @@
+mixin header()
+  +b.header&attributes(attributes)
+    .container
+      +e.content
+        +e.logo
+          +icon('logo')
+
+        +e.menu
+          +e.A.link(href="#") Our works
+          +e.A.link(href="#") Partners
+          +e.A.link(href="#") Contacts
+          +e.A.link(href="#") Courses
+
+        +e.actions
+          +e.A.link(href="mailto:hello@verstaburo.com") hello@verstaburo.com
+          +e.A.link(href="#")._button Start A Project

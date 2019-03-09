@@ -1,0 +1,52 @@
+.offer {
+  display: block;
+  text-align: center;
+  padding: 100px 0 100px;
+
+  $b: &;
+
+  &__title {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    @include heading-1;
+  }
+
+  &__text {
+    color: $color-grey;
+
+    @include text;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    &:not(:first-child) {
+      margin-top: 35px;
+    }
+  }
+
+  &__image {
+    margin-bottom: -100px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(to top, black 20%, transparent);
+    }
+
+    img {
+
+    }
+  }
+}

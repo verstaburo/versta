@@ -18,3 +18,8 @@
 800 — Extra Bold, Ultra Bold
 900 — Black, Heavy
 */
+
+@include font-face('Muller', normal, 300, 'MullerLight')
+@include font-face('Muller', normal, 400, 'MullerRegular')
+@include font-face('Muller', normal, 500, 'MullerMedium')
+@include font-face('Muller', normal, 700, 'MullerBold')

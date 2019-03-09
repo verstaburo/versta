@@ -1,0 +1,36 @@
+.section {
+  display: block;
+  padding: 100px 0;
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(white, .1);
+  }
+
+  $b: &;
+
+  &__header {
+
+  }
+
+  &__content {
+    &:not(:first-child) {
+      margin-top: 60px;
+    }
+  }
+
+  &__title {
+    @include heading-1;
+  }
+
+  &__pretitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: $color-main;
+    line-height: 1.2;
+  }
+
+  &__text {
+
+  }
+}

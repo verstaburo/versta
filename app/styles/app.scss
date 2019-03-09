@@ -11,6 +11,11 @@
 @import '../components/**/*';
 @import '../pages/**/*';
 
+body {
+  min-height: 100vh;
+  background-color: $color-black;
+}
+
 .container {
   width: $container-width;
   padding-left: $container-padding;
