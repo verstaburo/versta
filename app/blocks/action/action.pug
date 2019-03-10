@@ -1,7 +1,0 @@
-mixin action(title, text, button)
-  +b.action&attributes(attributes)
-    +e.col
-      +e.P.title!= title
-      +e.P.text!= text
-    +e.col
-      +button(false, true)(href="#")._filled.__button!= button
