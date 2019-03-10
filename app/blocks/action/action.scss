@@ -1,10 +1,31 @@
 .action {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 30px 40px;
   background-color: white;
   color: $color-black;
   border-radius: 3px;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    height: 8px;
+    border-radius: 0 0 3px 3px;
+    background-color: rgba($color-white, .5);
+  }
+
+  &::after {
+    margin-top: 8px;
+    left: 24px;
+    right: 24px;
+    background-color: rgba($color-white, .25);
+    height: 6px;
+  }
 
   &:not(:first-child) {
     margin-top: 80px;
@@ -19,7 +40,7 @@
   &__text {
     @include text;
 
-    color: $color-grey;
+    color: $color-grey-light;
   }
 
   $b: &;

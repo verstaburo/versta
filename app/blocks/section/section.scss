@@ -1,12 +1,37 @@
 .section {
   display: block;
-  padding: 100px 0;
+  padding: 100px 0 130px;
+  position: relative;
 
   &:not(:first-child) {
     border-top: 1px solid rgba(white, .1);
   }
 
   $b: &;
+
+  &_bg {
+    border-top: 0 !important;
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+    opacity: .3;
+    filter: grayscale(100%);
+
+    img {
+      @include fill-img;
+    }
+  }
 
   &__header {
 

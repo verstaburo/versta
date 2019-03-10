@@ -4,4 +4,4 @@ mixin action(title, text, button)
       +e.P.title!= title
       +e.P.text!= text
     +e.col
-      +button()(href="#").__button!= button
+      +button(false, true)(href="#")._filled.__button!= button

@@ -1,25 +1,30 @@
 .work {
   display: block;
   position: relative;
+  height: 540px;
+
+  &_small {
+    height: 230px;
+  }
 
   $b: &;
 
   &__image {
     width: 100%;
     filter: grayscale(0) blur(50px);
-    max-height: 500px;
     overflow: hidden;
     display: block;
     opacity: .3;
     border-radius: 3px;
     transition: filter $ease-long;
+    height: 100%;
 
     #{$b}:hover & {
       filter: grayscale(0%) blur(0);
     }
 
     img {
-      max-width: 100%;
+      @include fill-img;
     }
   }
 
