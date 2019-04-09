@@ -1,0 +1,50 @@
+.tools {
+  display: block;
+  margin-top: 100px;
+
+  $b: &;
+
+  .grid {
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -30px;
+    margin-right: -30px;
+    flex-wrap: wrap;
+  }
+
+  &__tool {
+    margin: 20px 30px;
+    opacity: .2;
+    filter: grayscale(100%);
+    transform: scale(.9);
+    transition: opacity $ease-main, filter $ease-main, transform $ease-main;
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+      transform: scale(1);
+    }
+
+    img {
+      max-height: 55px;
+      max-width: 100px;
+    }
+  }
+
+  &__text {
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: left;
+
+    span {
+      color: $color-main;
+      font-weight: 500;
+    }
+  }
+}

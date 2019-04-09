@@ -9,18 +9,66 @@
 
   $b: &;
 
-  &__image {
+  &__images {
+    opacity: .1;
+    transition: opacity $ease-main;
+    position: relative;
     width: 100%;
-    filter: grayscale(0) blur(50px);
-    overflow: hidden;
-    display: block;
-    opacity: .3;
-    border-radius: 3px;
-    transition: filter $ease-long;
     height: 100%;
+    display: block;
 
     #{$b}:hover & {
-      filter: grayscale(0%) blur(0);
+      opacity: .45;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    filter: grayscale(100%);
+    overflow: hidden;
+    display: block;
+    border-radius: 3px;
+    transition: filter $ease-main, transform $ease-main;
+    transform: scale(1);
+    height: 100%;
+    z-index: 1;
+    position: relative;
+
+    #{$b}:hover & {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  @keyframes flow {
+    0% { transform: translate3d(0, -20px, 0); }
+    50% { transform: translate3d(0, 20px, 0); }
+    100% { transform: translate3d(0, -20px, 0); }
+  }
+
+  &__bgimage {
+    width: 100%;
+    filter: blur(50px);
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity $ease-main;
+
+    #{$b}:hover & {
+      opacity: 1;
+      animation-name: flow;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      animation-duration: 2s;
     }
 
     img {
@@ -42,15 +90,9 @@
     right: 0;
     bottom: 0;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 2;
     padding: 40px;
     display: block;
-    border: 1px solid rgba(white, .1);
     border-radius: 3px;
-    transition: border-color $ease-long;
-
-    #{$b}:hover & {
-      border-color: transparent;
-    }
   }
 }

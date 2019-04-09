@@ -1,0 +1,24 @@
+mixin footer()
+  +b.footer&attributes(attributes)
+    .container
+      each section in getData('footer')
+        +e.col
+          +e.H4.title!= section.title
+          +e.UL.list
+            each item in section.links
+              if !item.github
+                +e.LI.item
+                  +e.A.link(href=item.href)!= item.name
+              else
+                +e.LI.item
+                  +e.A.link(href="#")
+                    +icon('github')
+
+
+      +e.col._info
+        +e.logo
+          +icon('logo')
+
+        +e.copyright
+          p © Versta, Front-end Bureau, 2016-2019
+          p IE Gorokhov G.V., OGRNIP 314632005700037

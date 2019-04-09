@@ -1,0 +1,30 @@
+.card {
+  display: block;
+  font-size: 0;
+
+  $b: &;
+
+  &__image {
+    img {
+      height: 80px;
+    }
+  }
+
+  &__title {
+    @include heading-3;
+
+    &:not(:first-child) {
+      margin-top: 45px;
+    }
+  }
+
+  &__text {
+    @include text-small;
+
+    color: $color-grey;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}

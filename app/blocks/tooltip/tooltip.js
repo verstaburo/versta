@@ -8,8 +8,20 @@ export default function tooltips() {
   $('.js-tooltip').tooltipster({
     animation: 'fade',
     delay: 0,
-    side: 'top',
+    side: 'bottom',
     theme: 'tooltipster-borderless',
+    distance: 10,
+  });
+
+  $('.js-tooltip-click').tooltipster({
+    animation: 'fade',
+    delay: 0,
+    side: 'bottom',
+    theme: 'tooltipster-borderless',
+    trigger: 'click',
+    interactive: true,
+    distance: 10,
+    contentCloning: true,
   });
 }
 /* eslint-enable no-unused-vars */

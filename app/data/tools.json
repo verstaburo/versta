@@ -1,0 +1,87 @@
+[
+  {
+    "image": "assets/images/tools/npm.svg",
+    "link": "https://www.npmjs.com/",
+    "title": "npm"
+  },
+  {
+    "image": "assets/images/tools/pugjs.svg",
+    "link": "https://pugjs.org/",
+    "title": "Pug"
+  },
+  {
+    "image": "assets/images/tools/sass.svg",
+    "link": "https://sass-lang.com/",
+    "title": "Sass"
+  },
+  {
+    "image": "assets/images/tools/bitbucket.svg",
+    "link": "https://bitbucket.org/",
+    "title": "BitBucket"
+  },
+  {
+    "image": "assets/images/tools/eslint.svg",
+    "link": "https://eslint.org/",
+    "title": "ESLint"
+  },
+  {
+    "image": "assets/images/tools/yarn.svg",
+    "link": "https://yarnpkg.com/",
+    "title": "Yarn"
+  },
+  {
+    "image": "assets/images/tools/nodejs.svg",
+    "link": "https://nodejs.org/",
+    "title": "Node.js"
+  },
+  {
+    "image": "assets/images/tools/webpack.svg",
+    "link": "https://webpack.js.org/",
+    "title": "Webpack"
+  },
+  {
+    "image": "assets/images/tools/gulpjs.svg",
+    "link": "https://gulpjs.com/",
+    "title": "Gulp.js"
+  },
+  {
+    "image": "assets/images/tools/autoprefixer.svg",
+    "link": "https://github.com/postcss/autoprefixer",
+    "title": "Autoprefixer"
+  },
+  {
+    "image": "assets/images/tools/gitlab.svg",
+    "link": "https://about.gitlab.com/",
+    "title": "GitLab"
+  },
+  {
+    "image": "assets/images/tools/lambdatest.svg",
+    "link": "https://www.lambdatest.com/",
+    "title": "LambdaTest"
+  },
+  {
+    "image": "assets/images/tools/avocode.svg",
+    "link": "https://avocode.com/",
+    "title": "Avocode"
+  },
+  {
+    "image": "assets/images/tools/zeplin.svg",
+    "link": "https://zeplin.io/",
+    "title": "Zeplin"
+  },
+  {
+    "image": "assets/images/tools/figma.svg",
+    "link": "https://www.figma.com/",
+    "title": "Figma"
+  },
+  {
+    "image": "assets/images/tools/webstorm.svg",
+    "link": "https://www.jetbrains.com/webstorm/",
+    "title": "WebStorm"
+  },
+  {
+    "image": "assets/images/tools/gsap.svg",
+    "link": "https://greensock.com/gsap",
+    "title": "GSAP"
+  }
+]

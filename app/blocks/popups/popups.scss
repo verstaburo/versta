@@ -7,3 +7,29 @@
 .fancybox-close-small:focus::after { outline: none; }
 
 .fancybox-enabled { overflow: initial; }
+
+.fancybox-button {
+  background: transparent;
+}
+
+.fancybox-button, .fancybox-button:link, .fancybox-button:visited {
+  color: white;
+  transition: color $ease-main;
+}
+
+.fancybox-button:hover {
+  color: $color-main;
+}
+
+.fancybox-bg {
+  background: black;
+}
+
+.fancybox-toolbar {
+  right: 20px;
+  top: 20px;
+
+  .fancybox-button {
+    margin-left: 10px;
+  }
+}

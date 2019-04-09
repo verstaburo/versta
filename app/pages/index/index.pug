@@ -6,7 +6,7 @@ block head
 block content
   +header
   +offer(getData('offer').index)
-  +section
+  +section#works
     +section-header('Our works', 'What we do')
     +section-content
       +grid
@@ -32,10 +32,23 @@ block content
           +work('MyBI Business Analytics', 'assets/images/works/case2.png')(href="#")
       +action('Have a project?', 'Get estimation of cost and terms within an hour', 'Send a project')
 
-  +section._center
+  +section._center#partners
     +section-header('We are trusted by top<br> Russian Digital Agencies', 'Our clients')
     +section-content
       +agencies
 
-  +section
+  +section#about
     +section-header('Quality focused PSD/Figma/Sketch to HTML/CSS/JS conversion and full front-end development', 'Our competence')
+    +section-content
+      +grid
+        each item in getData('options')
+          +col({xl: 4})
+            +card(item.image, item.title, item.text)
+
+      +tools
+
+  +section
+    +cta
+
+  +footer
+

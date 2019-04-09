@@ -1,0 +1,22 @@
+.cta {
+  display: block;
+  text-align: center;
+  padding-top: 60px;
+
+  $b: &;
+
+  &__title {
+    @include heading-0;
+  }
+
+  &__text {
+    margin-top: 60px;
+    color: $color-grey;
+
+    @include text;
+  }
+
+  &__button {
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,70 @@
+.footer {
+  display: block;
+  fill: $color-grey-dark;
+  color: $color-grey-dark;
+  padding: 90px 0 100px;
+  font-size: 0;
+
+  $b: &;
+
+  .container {
+    display: flex;
+  }
+
+  &__title {
+    @include heading-3;
+  }
+
+  &__list {
+    margin-top: 40px;
+  }
+
+  &__col {
+    &:not(:first-child) {
+      margin-left: 120px;
+    }
+
+    &_info {
+      flex: 1;
+      text-align: right;
+    }
+  }
+
+  &__item {
+    @include text-medium;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__link {
+    color: $color-grey-dark;
+    fill: $color-grey-dark;
+    transition: color $ease-main, fill $ease-main;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-top: 10px;
+    }
+
+    &:hover {
+      color: $color-main;
+      fill: $color-main;
+    }
+  }
+
+  &__logo {
+    svg {
+      width: 123px;
+      height: 20px;
+    }
+  }
+
+  &__copyright {
+    margin-top: 40px;
+
+    @include text-mini;
+  }
+}

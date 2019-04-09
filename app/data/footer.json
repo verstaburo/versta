@@ -1,0 +1,48 @@
+[
+  {
+    "title": "For clients",
+    "links": [
+      {
+        "name": "About Us",
+        "href": "#"
+      },
+      {
+        "name": "Contacts",
+        "href": "#"
+      },
+      {
+        "name": "Courses",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "title": "For partners",
+    "links": [
+      {
+        "name": "Details",
+        "href": "#"
+      },
+      {
+        "name": "Documents",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "title": "Contacts",
+    "links": [
+      {
+        "name": "+7 (8482) 65-00-38",
+        "href": "#"
+      },
+      {
+        "name": "hello@verstaburo.com",
+        "href": "#"
+      },
+      {
+        "github": true
+      }
+    ]
+  }
+]

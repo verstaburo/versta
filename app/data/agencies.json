@@ -1,5 +1,18 @@
 [
-  "assets/images/agencies/binn.svg",
-  "assets/images/agencies/agima.svg",
-  "assets/images/agencies/oktaeder.svg"
+  {
+    "image": "assets/images/agencies/binn.svg",
+    "link": "https://www.binn.ru/",
+    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора.",
+    "letter": "assets/images/letters/binn.png"
+  },
+  {
+    "image": "assets/images/agencies/agima.svg",
+    "link": "https://www.binn.ru/",
+    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора."
+  },
+  {
+    "image": "assets/images/agencies/oktaeder.svg",
+    "link": "https://www.binn.ru/",
+    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора."
+  }
 ]

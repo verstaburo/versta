@@ -1,0 +1,32 @@
+[
+  {
+    "image": "assets/images/icons/bem.svg",
+    "title": "BEM + Flexibility",
+    "text": "Full compliance with the methodology and the component approach. Change any content layout and nothing breaks"
+  },
+  {
+    "image": "assets/images/icons/pp.svg",
+    "title": "Pixel-Perfect",
+    "text": "100% matching layouts wherever possible"
+  },
+  {
+    "image": "assets/images/icons/form.svg",
+    "title": "Logic and functionality",
+    "text": "We make a full-fledged frontend and implement any functionality, write and parse complex JSON's, calculators, SPA, etc."
+  },
+  {
+    "image": "assets/images/icons/responsive.svg",
+    "title": "Responsive + Cross-Browser",
+    "text": "Perfect display of layout on any device and in any browser"
+  },
+  {
+    "image": "assets/images/icons/speed.svg",
+    "title": "Semantic and Optimized",
+    "text": "We use HTML5 tags for purposes that search engines like, and optimize the code for faster site operation."
+  },
+  {
+    "image": "assets/images/icons/speed.svg",
+    "title": "Spectacular animations",
+    "text": "Revive the layout with optimized animations that work quickly on any device"
+  }
+]

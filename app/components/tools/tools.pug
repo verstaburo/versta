@@ -1,0 +1,11 @@
+mixin tools()
+  +b.tools&attributes(attributes)
+    +grid
+      +col({xl: 8})
+        +e.links
+          each tool in getData('tools')
+            +e.A.tool(href=tool.link target="_blank" title=tool.title).js-tooltip
+              img(src=tool.image)
+
+      +col({xl: 4})
+        +e.H2.text We use modern front-end tools to provide you the <span>best result</span>
