@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 9999999;
   transform: translate3d(0, 0, 0);
 
   &::before {
@@ -56,12 +56,26 @@
     top: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
+    transition: opacity $ease-main, transform $ease-main;
+
+    #{$b}.is-popup-active & {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(-50%, calc(-50% - 10px), 0);
+    }
   }
 
   &__actions {
     color: $color-grey;
     display: flex;
     align-items: center;
+    transition: opacity $ease-main, transform $ease-main;
+
+    #{$b}.is-popup-active & {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(0, -10px, 0);
+    }
   }
 
   &__link {
@@ -103,44 +117,60 @@
   }
 
   &__contacts-block {
-    padding: 5px 0;
+    padding: 0;
     text-align: left;
 
+    div {
+      &:not(:first-child) {
+        padding: 12px 14px 0;
+        margin: 8px -14px 0;
+        border-top: 1px solid rgba(white, .1);
+      }
+    }
+
     h4 {
-      font-size: 12px;
       color: $color-grey;
       font-weight: 500;
-
-      &:not(:first-child) {
-        margin-top: 20px;
-      }
     }
 
     p {
       font-size: 14px;
       line-height: 1.8;
-
-      &:not(:first-child) {
-        margin-top: 2px;
-      }
     }
 
     svg {
       width: 14px;
       height: 14px;
       margin-right: 10px;
+      position: relative;
+      top: -1px;
     }
 
     a {
       transition: color $ease-main, fill $ease-main;
       fill: white;
-      display: inline-flex;
+      display: flex;
       align-items: center;
 
       &:hover {
         color: $color-main;
         fill: $color-main;
       }
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity $ease-main;
+    opacity: 0;
+    pointer-events: none;
+
+    #{$b}.is-popup-active & {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }

@@ -1,21 +1,37 @@
 .input {
-  padding: 0 10px;
-  height: 40px;
-  border: 1px solid $color-border;
+  padding: 42px 16px 16px;
+  height: 82px;
   width: 100%;
   box-sizing: border-box;
-  font-size: 14px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.5;
   border-radius: 0;
   min-height: 0;
-  background-color: white;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  transition: border-color $ease-main;
+  font-weight: 400;
+  cursor: text;
+
+  &:focus, &:not(:empty) {
+    & + .label {
+      color: $color-main;
+    }
+  }
+
+  &[required] + .label {
+    &::after {
+      content: '*';
+      color: $color-main;
+      margin-left: 2px;
+    }
+  }
 }
 
 .textarea {
   @extend .input;
 
-  padding-top: 13px;
-  padding-bottom: 13px;
   min-height: 150px;
-  resize: vertical;
+  resize: none;
 }

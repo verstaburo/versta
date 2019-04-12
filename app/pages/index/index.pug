@@ -6,30 +6,31 @@ block head
 block content
   +header
   +offer(getData('offer').index)
+  +video-background('assets/videos/video1.mp4')
   +section#works
     +section-header('Our works', 'What we do')
     +section-content
       +grid
         +col({xl: 4})
-          +work('Credit Europe Bank', 'assets/images/works/case1.png')(href="#")
+          +work('Credit Europe Bank', 'assets/images/works/case1.png', ['Responsive'], '3 hours')(href="#")
         +col({xl: 4})
-          +work('MyBI Business Analytics', 'assets/images/works/case2.png')(href="#")
-        +col({xl: 4})
-          +grid
-            +col({xl: 12})
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")._small
-            +col({xl: 12})
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")._small
+          +work('MyBI Business Analytics', 'assets/images/works/case2.png', ['Responsive'], '3 hours')(href="#")
         +col({xl: 4})
           +grid
             +col({xl: 12})
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")._small
+              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['BEM', 'Parallax', 'Responsive', 'Animations', 'SPA'], '3 hours')(href="#")._small
             +col({xl: 12})
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png')(href="#")._small
+              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
         +col({xl: 4})
-          +work('Credit Europe Bank', 'assets/images/works/case1.png')(href="#")
+          +grid
+            +col({xl: 12})
+              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
+            +col({xl: 12})
+              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
         +col({xl: 4})
-          +work('MyBI Business Analytics', 'assets/images/works/case2.png')(href="#")
+          +work('Credit Europe Bank', 'assets/images/works/case1.png', ['Responsive'], '3 hours')(href="#")
+        +col({xl: 4})
+          +work('MyBI Business Analytics', 'assets/images/works/case2.png', ['Responsive'], '3 hours')(href="#")
       +action('Have a project?', 'Get estimation of cost and terms within an hour', 'Send a project')
 
   +section._center#partners
@@ -51,4 +52,9 @@ block content
     +cta
 
   +footer
+
+  +popups
+    +popup-start
+
+
 

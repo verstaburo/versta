@@ -23,8 +23,6 @@ $new-breakpoints: map_remove($breakpoints, $default-breakpoit-name);
       flex: 1;
     }
 
-    @include text;
-
     @for $i from 1 through 15 {
 
       &_#{$default-breakpoit-name}_#{$i} {

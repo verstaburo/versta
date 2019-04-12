@@ -1,0 +1,17 @@
+<svg width="90" height="80" viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="26.8872" y1="1.53865" x2="65.8872" y2="76.5387" stroke="#242424" stroke-width="2" stroke-dasharray="3 3"/>
+<line x1="3.34472" y1="75.2446" x2="86.3447" y2="3.24461" stroke="#242424" stroke-width="2" stroke-dasharray="3 3"/>
+<line x1="3.36565" y1="23.0692" x2="87.3657" y2="56.0693" stroke="#242424" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="45" cy="40" r="4" fill="#C1AD78"/>
+<circle cx="45" cy="21" r="4" fill="#121212"/>
+<rect x="1" y="21" width="68" height="58" rx="9" stroke="#C1AD78" stroke-width="2"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="22" y="0" width="68" height="58">
+<path d="M87 57.5L22 3.5V0H90V50.5V54L87 57.5Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="21" y="1" width="68" height="58" rx="9" stroke="#C1AD78" stroke-width="2"/>
+</g>
+<line x1="2.99476" y1="24.3148" x2="23.1476" y2="4.26728" stroke="#C1AD78" stroke-width="2"/>
+<line x1="66.2947" y1="23.3386" x2="86.4476" y2="3.29106" stroke="#C1AD78" stroke-width="2"/>
+<line x1="66.2947" y1="76.3386" x2="86.4476" y2="56.291" stroke="#C1AD78" stroke-width="2"/>
+</svg>

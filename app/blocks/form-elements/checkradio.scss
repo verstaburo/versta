@@ -1,8 +1,13 @@
 .checkradio {
   position: relative;
-  padding-left: 25px;
+  padding-left: 28px;
   display: inline-block;
   cursor: pointer;
+  font-size: 0;
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
 
   &__input {
     position: absolute;
@@ -17,33 +22,47 @@
     &:checked {
 
       & + .checkradio__box {
+        border-color: $color-main;
+        box-shadow: 0 3px 10px 0 rgba($color-main, .3);
+
         &::before { opacity: 1; }
+      }
+
+      & + .checkradio__box + .checkradio__content {
+        color: white;
       }
     }
   }
 
   &__box {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 1px solid $color-border;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $color-grey-dark;
     left: 0;
-    top: 2px;
+    top: 4px;
+    border-radius: 4px;
+    transition: border-color $ease-main, box-shadow $ease-main;
 
     &::before {
       content: '';
-      width: 9px;
-      height: 9px;
+      width: 6px;
+      height: 6px;
       background-color: $color-main;
       display: block;
       opacity: 0;
       transition: opacity $ease-main;
+      border-radius: 2px;
 
       @include center-image;
     }
   }
 
   &__content {
-    @include text;
+    @include text-small;
+
+    display: block;
+    color: $color-grey;
+    transition: color $ease-main;
   }
 }

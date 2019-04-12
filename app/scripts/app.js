@@ -11,9 +11,12 @@ import slider from '../blocks/slider/slider';
 import tooltips from '../blocks/tooltip/tooltip';
 import tabs from '../blocks/tabs/tabs';
 import maps from '../blocks/map/map';
+import responsiveIcon from '../blocks/responsive-icon/responsive-icon';
 import agencies from '../blocks/agencies/agencies';
+import dropzones from '../blocks/dropzone/dropzone';
 import header from '../components/header/header';
 import '../blocks/rating/rating';
+import videoBackground from '../blocks/video-background/video-background';
 import '../blocks/accordion/accordion';
 import '../blocks/dropdown/dropdown';
 import '../blocks/put-block-into-slot/put-block-into-slot';
@@ -38,5 +41,8 @@ $(() => {
   scrollanimation();
   agencies();
   header();
+  videoBackground();
+  responsiveIcon();
+  dropzones();
 });
 /* eslint-enable */

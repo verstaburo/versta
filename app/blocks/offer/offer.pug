@@ -2,17 +2,16 @@ mixin offer(data)
   +b.SECTION.offer&attributes(attributes)
     .container
       +grid
-        if data.image
-          +col()
-            +e.image
-              img(src=data.image)
-
         if data.title
           +col().grid__col_grow
             +e.H1.title!= data.title
+
+        if data.image
+          +col()
+            +responsive-icon
 
       if data.text
         +e.P.text!= data.text
 
       if data.button
-        +button(false, true)(href=data.button.link)._big.__button!= data.button.text
+        +button(false, true)(href=data.button.link)._big.__button.js-anchor!= data.button.text

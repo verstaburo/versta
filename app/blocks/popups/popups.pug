@@ -2,6 +2,79 @@ mixin popups()
   +b.popups&attributes(attributes)
     block
 
-mixin popup()
+mixin popup(heading, description)
   +b.popup&attributes(attributes)
-    block
+    .container
+      +e.texts
+        +e.H2.title Start a project
+        if description
+          +e.P.description!= description
+
+      block
+
+
+mixin popup-start()
+  +popup('Start a project', 'Fill the project and contact information to get the estimation of terms and cost as fast as possible')._small#start
+    +b.form
+      +e.section
+        +e.col_left
+          +e.H3.title Project information
+
+        +e.col._right
+          +e.group
+            +inputbox
+              +input(name="" type="text")
+              +label Project Name
+
+            +inputbox
+              +input(name="" type="text")
+              +label Wanted terms
+
+            +inputbox
+              +input(name="" type="text")
+              +label Budget ($)
+
+            +inputbox
+              +input(name="" type="text")
+              +label Important technologies
+
+      +e.section
+        +e.col_left
+          +e.H3.title Contact information
+
+        +e.col._right
+          +e.group
+            +inputbox
+              +input(name="" type="text" required)
+              +label Name
+
+            +inputbox
+              +input(name="" type="text" required)
+              +label E-mail
+
+            +inputbox
+              +input(name="" type="text")
+              +label Skype / Telegram / Phone
+
+            +inputbox
+              +textarea(name="" type="text")
+              +label Notes / Project brief
+
+            +inputbox
+              +input(name="" type="text")
+              +label Country
+
+      +e.section
+        +e.col_left
+          +e.H3.title Project files, NDA, specification etc.
+
+        +e.col._right
+          +dropzone.js-dropzone
+
+          +e.box
+            +e.P.text We guarantee NDA for all requests.
+            +checkbox() I accept Terms and Conditions
+            +checkbox() I consent to processing of my personal data and accept Privacy Policy.
+
+          +e.button
+            +button('button', true)(type="submit")._big Get estimation

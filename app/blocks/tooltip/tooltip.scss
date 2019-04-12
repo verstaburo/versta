@@ -1,16 +1,5 @@
 @import '../../node_modules/tooltipster/dist/css/tooltipster.bundle.css';
 
-.tooltipster-sidetip.tooltipster-borderless .tooltipster-box {
-  border: none;
-  background: black;
-  font-size: 12px;
-  line-height: 1.8;
-  border-radius: 3px;
-  box-shadow: 0 8px 45px 0 rgba($color-main, .3);
-  font-weight: 300;
-  color: $color-basic;
-}
-
 .tooltipster-sidetip.tooltipster-borderless.tooltipster-bottom .tooltipster-box {
   margin-top: 8px;
 }
@@ -84,4 +73,19 @@
 .tooltipster-fade.tooltipster-show {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.tooltipster-sidetip .tooltipster-content {
+  padding: 8px 14px 6px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.tooltipster-sidetip.tooltipster-borderless .tooltipster-box {
+  border: none;
+  background: black;
+  border-radius: 3px;
+  box-shadow: 0 8px 45px 0 rgba($color-main, .3);
+  font-weight: 300;
+  color: $color-basic;
 }

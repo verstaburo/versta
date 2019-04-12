@@ -1,0 +1,171 @@
+$ease-icon: .2s ease;
+
+.responsive-icon {
+  display: block;
+  width: 300px;
+  height: 200px;
+  position: relative;
+
+  $b: &;
+
+  > * {
+    position: absolute;
+    box-sizing: border-box;
+  }
+
+  &__top-frame {
+    width: 80%;
+    height: calc(90% + 2px);
+    left: 10%;
+    top: 0;
+    border: 2px solid $color-main;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top $ease-icon, left $ease-icon, border-radius $ease-icon, height $ease-icon, width $ease-icon;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      border: 2px solid $color-grey-dark;
+      border-radius: 5px;
+      transition: left $ease-icon, top $ease-icon, right $ease-icon, bottom $ease-icon, border-radius $ease-icon;
+    }
+
+    #{$b}_tablet & {
+      top: 5%;
+      height: 90%;
+      border-radius: 20px;
+
+      &::before {
+        right: 24px;
+        border-radius: 16px;
+      }
+    }
+
+    #{$b}_mobile & {
+      top: 10%;
+      width: 30%;
+      height: 80%;
+      left: 35%;
+      border-radius: 15px;
+
+      &::before {
+        right: 3px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__content {
+    width: 70%;
+    transition: width $ease-icon;
+
+    div, span {
+      transition: height $ease-icon, width $ease-icon, margin $ease-icon;
+    }
+
+    span {
+      display: block;
+      height: 14px;
+      background-color: white;
+      width: 80%;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &:nth-of-type(2) {
+        width: 65%;
+      }
+
+      & + div {
+        margin-top: 20px;
+      }
+    }
+
+    div {
+      display: block;
+      height: 6px;
+      background-color: $color-grey;
+      width: 50%;
+
+      &:nth-of-type(2) {
+        width: 30%;
+      }
+
+      & + div {
+        margin-top: 7px;
+      }
+    }
+
+    #{$b}_mobile & {
+      width: 60%;
+
+      span {
+        height: 10px;
+        width: 90%;
+
+        &:nth-of-type(2) {
+          width: 80%;
+        }
+
+        & + div {
+          margin-top: 15px;
+        }
+      }
+
+      div {
+        width: 65%;
+
+        &:nth-of-type(2) {
+          width: 45%;
+        }
+      }
+    }
+  }
+
+  &__bottom-frame {
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    border: 2px solid $color-main;
+    border-radius: 2px 2px 10px 10px;
+    transition: transform $ease-icon, opacity $ease-icon;
+    transform-origin: center top;
+
+    #{$b}_tablet &, #{$b}_mobile & {
+      transform: translate3d(0, 5px, 0);
+      opacity: 0;
+    }
+  }
+
+  &__circle {
+    right: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-main;
+    top: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0;
+    transition: opacity $ease-icon, right $ease-icon .2s, top $ease-icon .2s;
+    position: absolute;
+
+    #{$b}_tablet & {
+      opacity: 1;
+      transition: opacity $ease-icon, right $ease-icon, top $ease-icon;
+    }
+
+    #{$b}_mobile & {
+      top: 14px;
+      right: 14px;
+    }
+  }
+}

@@ -1,3 +1,8 @@
 .inputbox {
   display: block;
+  position: relative;
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(white, .1);
+  }
 }

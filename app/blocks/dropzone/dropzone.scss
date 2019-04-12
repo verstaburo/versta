@@ -1,0 +1,177 @@
+.dropzone {
+  display: block;
+  padding: 40px;
+  border: 2px dotted $color-grey-dark;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 20px 0 rgba($color-main, .2) inset;
+  transition: border-color $ease-main, box-shadow $ease-main;
+
+  @include text-small;
+
+  $b: &;
+
+  &.dz-drag-hover {
+    border-color: $color-main;
+    box-shadow: 0 4px 25px 0 rgba($color-main, .25) inset;
+  }
+}
+
+.dz-error-message {
+  display: none;
+
+  .dz-error & {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1;
+    color: $color-red;
+    font-weight: 500;
+    margin-top: 8px;
+
+    &::before {
+      content: 'Uploading error';
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.dz-message {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.dz-preview {
+  border-radius: 10px;
+  border: 1px solid rgba(white, .05);
+  box-sizing: border-box;
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.dz-filename {
+  flex: 1;
+  overflow: hidden;
+  text-align: left;
+
+  @include text-medium;
+
+  line-height: 1.4;
+
+  span {
+    word-break: break-word;
+    display: block;
+  }
+}
+
+.dz-size {
+  @include text-mini;
+
+  margin-top: 8px;
+  font-weight: 300;
+  flex-shrink: 0;
+  color: $color-grey;
+  line-height: 1;
+}
+
+.dz-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  font-size: 0;
+  margin-right: 14px;
+  position: relative;
+  z-index: 1;
+  display: none;
+
+  .dz-image-preview & {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dz-details {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.dz-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9px;
+  overflow: hidden;
+
+  span {
+    height: 100%;
+    display: block;
+    width: 0;
+    background-color: rgba(white, .05);
+  }
+}
+
+.dz-success-mark, .dz-error-mark {
+  font-size: 0;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  transition: opacity $ease-main;
+  pointer-events: none;
+  opacity: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.dz-success-mark {
+  svg path {
+    fill: $color-main !important;
+  }
+}
+
+.dz-error-mark {
+  svg path {
+    fill: $color-red !important;
+  }
+}
+
+.dz-preview {
+  &.dz-error {
+    .dz-error-mark {
+      opacity: 1;
+    }
+  }
+
+  &.dz-success {
+    .dz-success-mark {
+      opacity: 1;
+    }
+  }
+}

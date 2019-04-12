@@ -1,7 +1,18 @@
-mixin work(title, image)
+mixin work(title, image, tags, time)
   +b.A.work&attributes(attributes)
     +e.info
-      +e.H3.title!= title
+      +e.title-wrap
+        +e.H3.title!= title
+        +e.lines-wrap
+          +e.P.title._lines!= title
+      +e.bottom-info
+        +e.tags
+          each tag in tags
+            +e.tag!= tag
+        +e.digits
+          +e.digit
+            +icon('time')
+            span!= time
     +e.images
       +e.image
         img(src=image)

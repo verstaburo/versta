@@ -1,0 +1,13 @@
+.label {
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  right: 16px;
+  line-height: 1;
+  font-weight: 300;
+  color: $color-grey;
+  pointer-events: none;
+  transition: color $ease-main;
+  transform-origin: left top;
+}

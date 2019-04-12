@@ -1,0 +1,81 @@
+.video-background {
+  display: block;
+  color: white;
+  text-align: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  font-size: 0;
+  opacity: .25;
+  transition: opacity $ease-main;
+  pointer-events: none;
+
+  &.is-disabled {
+    opacity: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to top, black, rgba(black, 0));
+  }
+
+  $b: &;
+
+  &__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    video {
+      height: 100%;
+      width: 177.77777778vh; /* 100 * 16 / 9 */
+      min-width: 100%;
+      min-height: 56.25vw;
+      position: absolute;
+      left: 50%; /* % of surrounding element */
+      top: 0;
+      transform: translate(-50%, 0);
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(black, .6), transparent);
+    }
+  }
+}
+
+// Скрываем кнопку плей на iOS
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
