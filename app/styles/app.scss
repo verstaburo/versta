@@ -2,11 +2,31 @@
 @import 'helpers/variables'; // Переменные
 @import 'helpers/mixins'; // Миксины
 @import 'helpers/fonts'; // Шрифты
-@import 'helpers/gradients'; // Градиенты
 @import 'helpers/basics'; // Основные общие стили
 @import 'helpers/text-styles'; // Стили текстов
-@import 'helpers/link-styles'; // Стили ссылок
-@import 'helpers/list-styles'; // Стили списков
+
+%link {
+  border-bottom: 1px dotted rgba(white, .2);
+  transition: color $ease-main, border-color $ease-main, fill $ease-main;
+  color: $color-main;
+  fill: $color-main;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    color: $color-main-light;
+    border-color: $color-main-light;
+    fill: $color-main-light;
+  }
+}
+
 @import '../blocks/**/*';
 @import '../components/**/*';
 @import '../pages/**/*';
@@ -18,8 +38,10 @@ body {
 
 .container {
   width: $container-width;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
+
+  @include rule(padding-left, (xl: $container-padding, lg: 60px, md: 40px, sm: 24px));
+  @include rule(padding-right, (xl: $container-padding, lg: 60px, md: 40px, sm: 24px));
+
   margin: 0 auto;
   max-width: 100%;
   box-sizing: border-box;

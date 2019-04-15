@@ -1,7 +1,8 @@
 .cta {
   display: block;
   text-align: center;
-  padding-top: 60px;
+
+  @include rule(padding-top, (xl: 60px, lg: 30px, sm: 0));
 
   $b: &;
 
@@ -10,13 +11,14 @@
   }
 
   &__text {
-    margin-top: 60px;
+    @include rule(margin-top, (xl: 60px, lg: 40px, sm: 24px));
+
     color: $color-grey;
 
     @include text;
   }
 
   &__button {
-    margin-top: 60px;
+    @include rule(margin-top, (xl: 60px, lg: 40px));
   }
 }

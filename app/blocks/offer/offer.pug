@@ -3,15 +3,15 @@ mixin offer(data)
     .container
       +grid
         if data.title
-          +col().grid__col_grow
-            +e.H1.title!= data.title
+          +col({xl: 0, md: 12}).grid__col_grow
+            +e.H1.title.js-sr.js-sr_1!= data.title
+
+            if data.text
+              +e.P.text.js-sr.js-sr_1!= data.text
+
+            if data.button
+              +button(false, true)(href=data.button.link)._big.__button.js-anchor.js-sr.js-sr_1!= data.button.text
 
         if data.image
-          +col()
-            +responsive-icon
-
-      if data.text
-        +e.P.text!= data.text
-
-      if data.button
-        +button(false, true)(href=data.button.link)._big.__button.js-anchor!= data.button.text
+          +col({xl: 0, md: 12}).offer__imagecol
+            +responsive-icon.js-sr.js-sr_1

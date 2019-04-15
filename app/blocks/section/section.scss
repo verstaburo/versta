@@ -1,6 +1,8 @@
 .section {
   display: block;
-  padding: 100px 0 130px;
+
+  @include rule(padding, (xl: 100px 0 130px, lg: 70px 0 80px, sm: 40px 0 50px));
+
   position: relative;
 
   &:not(:first-child) {
@@ -33,13 +35,10 @@
     }
   }
 
-  &__header {
-
-  }
-
   &__content {
+
     &:not(:first-child) {
-      margin-top: 80px;
+      @include rule(margin-top, (xl: 80px, lg: 60px, sm: 40px));
     }
   }
 
@@ -48,14 +47,11 @@
   }
 
   &__pretitle {
-    font-size: 16px;
+    @include rule(font-size, (xl: 16px, sm: 14px));
+
     font-weight: 500;
     margin-bottom: 10px;
     color: $color-main;
     line-height: 1.2;
-  }
-
-  &__text {
-
   }
 }

@@ -1,3 +1,7 @@
+mixin form()
+  +b.FORM.form&attributes(attributes)
+    block
+
 mixin inputbox()
   .inputbox&attributes(attributes)
     block
@@ -9,35 +13,24 @@ mixin label()
   p.label&attributes(attributes)
     block
 
-mixin input-number()
-  .input-numberbox
-    span.input-numberbox__button.js-numberbox-minus
-    input.input.input-numberbox__input.js-numberbox-input&attributes(attributes)
-    span.input-numberbox__button.js-numberbox-plus
-
 mixin textarea()
-  textarea.textarea&attributes(attributes)
+  textarea.textarea.js-autosize&attributes(attributes)
     block
 
 mixin select()
   select.select&attributes(attributes).js-select
     block
 
-mixin checkbox(name, value, checked)
+mixin checkbox(name, value, checked, required)
   +b.LABEL.checkradio&attributes(attributes)
-    - var check = checked || '';
-    +e.INPUT.input(name=name, value=value, check, type="checkbox")
+    +e.INPUT.input(name=name, value=value, checked=checked, required=required, type="checkbox")
     +e.SPAN.box
     +e.SPAN.content
       block
 
-mixin radio(name, value, checked)
+mixin radio(name, value, checked, required)
   +b.LABEL.checkradio&attributes(attributes)
-    +e.INPUT.input(name=name, value=value, checked=checked, type="radio")
+    +e.INPUT.input(name=name, value=value, checked=checked, required=required, type="radio")
     +e.SPAN.box
     +e.SPAN.content
       block
-
-mixin range()
-  +b.range&attributes(attributes).js-range
-    block

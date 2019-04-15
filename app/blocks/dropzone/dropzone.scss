@@ -1,17 +1,20 @@
-.dropzone {
+.drop-zone {
   display: block;
-  padding: 40px;
+
+  @include rule(padding, (xl: 40px, sm: 20px));
+
   border: 2px dotted $color-grey-dark;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 20px 0 rgba($color-main, .2) inset;
   transition: border-color $ease-main, box-shadow $ease-main;
+  cursor: pointer;
 
   @include text-small;
 
   $b: &;
 
-  &.dz-drag-hover {
+  &.dz-drag-hover, &:hover {
     border-color: $color-main;
     box-shadow: 0 4px 25px 0 rgba($color-main, .25) inset;
   }
@@ -41,8 +44,9 @@
 }
 
 .dz-message {
+
   &:not(:last-child) {
-    margin-bottom: 30px;
+    @include rule(margin-bottom, (xl: 30px, sm: 20px));
   }
 }
 
@@ -56,6 +60,7 @@
   flex-wrap: wrap;
   position: relative;
   width: 100%;
+  cursor: auto;
 
   &:not(:last-child) {
     margin-bottom: 16px;
@@ -88,9 +93,10 @@
 }
 
 .dz-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 15px;
+  @include rule(width, (xl: 40px, sm: 30px));
+  @include rule(height, (xl: 40px, sm: 30px));
+  @include rule(border-radius, (xl: 15px, sm: 10px));
+
   overflow: hidden;
   font-size: 0;
   margin-right: 14px;
@@ -132,6 +138,7 @@
     display: block;
     width: 0;
     background-color: rgba(white, .05);
+    transition: width $ease-main;
   }
 }
 
@@ -151,27 +158,64 @@
 }
 
 .dz-success-mark {
+
   svg path {
     fill: $color-main !important;
   }
 }
 
 .dz-error-mark {
+
   svg path {
     fill: $color-red !important;
   }
 }
 
 .dz-preview {
+
   &.dz-error {
+
     .dz-error-mark {
       opacity: 1;
     }
   }
 
   &.dz-success {
+
     .dz-success-mark {
       opacity: 1;
     }
+  }
+}
+
+.dz-remove {
+  font-size: 10px;
+  font-weight: 400;
+  display: block;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  height: 16px;
+  line-height: 16px;
+  background: $color-main;
+  padding: 0 7px;
+  box-shadow: 0 3px 7px 0 rgba($color-main, .3);
+  border-radius: 50px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+  transition: background $ease-main, box-shadow $ease-main, opacity $ease-main, transform $ease-main;
+
+  @include rule(opacity, (xl: 0, md: 1));
+  @include rule(transform, (xl: translate3d(-5px, 0, 0), md: none));
+
+  &:hover {
+    background: $color-main-light;
+    box-shadow: 0 4px 9px 0 rgba($color-main, .35);
+  }
+
+  .dz-preview:hover & {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

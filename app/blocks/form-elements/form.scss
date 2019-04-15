@@ -3,7 +3,8 @@
   display: block;
 
   &__title {
-    font-size: 24px;
+    @include rule(font-size, (xl: 24px, sm: 18px));
+
     font-weight: 400;
     color: white;
     line-height: 1.5;
@@ -18,18 +19,22 @@
   }
 
   &__section {
-    display: flex;
+    @include rule(display, (xl: flex, sm: block));
 
     &:not(:first-child) {
-      margin-top: 60px;
+      @include rule(margin-top, (xl: 60px, sm: 40px));
     }
   }
 
   &__col {
+
     &_left {
-      width: 200px;
-      margin-right: 80px;
+      @include rule(width, (xl: 200px, sm: auto));
+      @include rule(margin-right, (xl: 80px, sm: 0));
+
       flex-shrink: 0;
+
+      @include rule(margin-bottom, (sm: 10px));
     }
 
     &_right {
@@ -38,13 +43,15 @@
   }
 
   &__box {
+
     &:not(:first-child) {
-      margin-top: 20px;
+      @include rule(margin-top, (xl: 20px, sm: 10px));
     }
   }
 
   &__button {
     text-align: right;
-    margin-top: 40px;
+
+    @include rule(margin-top, (xl: 40px, sm: 30px));
   }
 }

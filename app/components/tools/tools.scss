@@ -1,6 +1,7 @@
 .tools {
   display: block;
-  margin-top: 100px;
+
+  @include rule(margin-top, (xl: 100px, lg: 80px, sm: 60px));
 
   $b: &;
 
@@ -8,17 +9,24 @@
     align-items: center;
   }
 
+  &__texts {
+    @include rule(order, (lg: -1));
+  }
+
   &__links {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: -30px;
-    margin-right: -30px;
+
+    @include rule(margin-left, (xl: -30px, md: -25px, sm: -15px));
+    @include rule(margin-right, (xl: -30px, md: -25px, sm: -15px));
+
     flex-wrap: wrap;
   }
 
   &__tool {
-    margin: 20px 30px;
+    @include rule(margin, (xl: 20px 30px, md: 15px 25px, sm: 10px 15px));
+
     opacity: .2;
     filter: grayscale(100%);
     transform: scale(.9);
@@ -31,16 +39,18 @@
     }
 
     img {
-      max-height: 55px;
-      max-width: 100px;
+      @include rule(max-height, (xl: 55px, md: 45px, sm: 35px));
+      @include rule(max-width, (xl: 100px, md: 90px, sm: 100px));
     }
   }
 
   &__text {
-    font-size: 30px;
+    @include rule(font-size, (xl: 30px, md: 24px, sm: 20px));
+
     line-height: 1.5;
     font-weight: 400;
-    text-align: left;
+
+    @include rule(text-align, (xl: left, lg: center));
 
     span {
       color: $color-main;

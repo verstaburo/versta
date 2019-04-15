@@ -1,11 +1,11 @@
 mixin agencies()
   +b.agencies&attributes(attributes)
-    +e.slider.js-slider-agencies
+    +e.slider.js-slider-agencies.js-sr.js-sr_1
       .swiper-wrapper
         each agency in getData('agencies')
           +e.IMG.agency.swiper-slide(src=agency.image)
 
-    +e.content-slider.js-slider-agencies-content
+    +e.content-slider.js-slider-agencies-content.js-sr.js-sr_1
       .swiper-wrapper
         each agency in getData('agencies')
           +e.content.swiper-slide
@@ -17,5 +17,5 @@ mixin agencies()
             if agency.letter
               +e.A.letter(href=agency.letter).js-fancybox
                 img(src=agency.letter)
-                span Testimonial letter
+                span Рекомендательное письмо
 

@@ -1,11 +1,11 @@
 mixin tools()
   +b.tools&attributes(attributes)
     +grid
-      +col({xl: 8})
+      +col({xl: 8, lg: 12})
         +e.links
           each tool in getData('tools')
-            +e.A.tool(href=tool.link target="_blank" title=tool.title).js-tooltip
+            +e.A.tool(href=tool.link target="_blank" title=tool.title).js-tooltip.js-sr.js-sr_cycle_1
               img(src=tool.image)
 
-      +col({xl: 4})
-        +e.H2.text We use modern front-end tools to provide you the <span>best result</span>
+      +col({xl: 4, lg: 12}).tools__texts
+        +e.H2.text.js-sr.js-sr_1 Используем современные решения и сервисы для <span>лучшего результата</span>

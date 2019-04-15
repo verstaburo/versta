@@ -1,0 +1,11 @@
+mixin page(title, description, animation)
+  +b.page&attributes(attributes)
+    .container
+      +e.head
+        +e.H1.title(class=(animation ? 'js-sr js-sr_1' : false))!= title
+
+        if description
+          +e.P.description(class=(animation ? 'js-sr js-sr_1' : false))!= description
+
+      +e.content
+        block

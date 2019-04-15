@@ -1,11 +1,11 @@
 {
   "index": {
     "image": "assets/images/window.svg",
-    "title": "Trust the front-end part of your projects to the reliable team",
-    "text": "We develop 99% Pixel-Perfect Websites within 1+ day.<br> In accordance with yours or ours code standards",
+    "title": "Доверьте верстку ваших проектов надежной команде",
+    "text": "Верстаем сайты с 99% точностью соответствия макетам в сроки от 1 дня.<br> В соответствии с вашими или нашими стандартами разработки.",
     "button": {
       "link": "#works",
-      "text": "Watch our works"
+      "text": "Примеры работ"
     }
   }
 }

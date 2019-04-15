@@ -27,6 +27,14 @@ export default function agencies () {
     controller: {
       control: sliderTwo,
     },
+    breakpoints: {
+      1024: {
+        spaceBetween: 30,
+      },
+      768: {
+        spaceBetween: 10,
+      },
+    },
   });
 };
 /* eslint-enable */

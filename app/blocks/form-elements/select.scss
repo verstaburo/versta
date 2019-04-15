@@ -2,84 +2,160 @@
 // Кастомные селекты
 // #####
 
-@import '../../../node_modules/choices.js/assets/styles/scss/choices.scss';
+select::-ms-expand {
+  display: none;
+}
 
-.select {
+@import '../../node_modules/sumoselect/sumoselect.min.css';
+
+.select, .SumoSelect > .CaptionCont, .SumoSelect.open .search-txt {
   appearance: none;
 
   @extend .input;
 }
 
-.choices {
+.SumoSelect {
+  width: 100%;
+}
 
-  &__inner, &[data-type*='select-one'] &__inner {
-    @extend .select;
+.SumoSelect.open .search-txt {
+  border: 0;
+  height: 100%;
+}
 
-    transition: border-color $ease-main;
+.SumoSelect.open > .search > label {
+  visibility: visible;
+  z-index: 1;
+}
+
+.SumoSelect > .CaptionCont, .SumoSelect.open .search-txt {
+  line-height: 52px;
+  padding-right: 52px;
+  cursor: pointer;
+}
+
+.SumoSelect > .CaptionCont > span {
+  padding-right: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 1.5;
+}
+
+.SumoSelect > .CaptionCont > label {
+  cursor: pointer;
+}
+
+.SumoSelect.open > .CaptionCont, .SumoSelect:focus > .CaptionCont, .SumoSelect:hover > .CaptionCont {
+  box-shadow: none;
+  border-color: $color-grey;
+}
+
+.SumoSelect > .optWrapper {
+  background: white;
+  border: 0;
+  border-radius: 5px;
+  left: 16px;
+  right: 16px;
+  width: auto;
+  box-shadow: 0 5px 20px 0 rgba($color-main, .3);
+}
+
+.SumoSelect.open > .optWrapper {
+  top: 100%;
+  margin-top: -4px;
+}
+
+.SumoSelect > .optWrapper > .options li.opt {
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0 !important;
+  transition: background-color $ease-main, color $ease-main;
+  color: $color-grey-light;
+
+  &:first-child {
+    padding-top: 15px;
   }
 
-  &[data-type*='select-one'] {
-
-    .choices__inner { padding-bottom: 0; }
-
-    &::after {
-      border-width: 5px 5px 0;
-      top: 0;
-      bottom: 0;
-      right: 10px;
-      margin: auto;
-      transform: rotate(0) translate3d(0, 0, 0);
-      transition: transform $ease-main;
-      border-color: #333 transparent transparent;
-    }
-
-    &.is-open::after {
-      transform: rotate(180deg) translate3d(0, 0, 0);
-      border-color: #333 transparent transparent;
-      margin: auto;
-    }
+  &:last-child {
+    padding-bottom: 15px;
   }
 
-  &__list {
-    border-color: $color-border;
-
-    &--single {
-      display: table;
-      box-sizing: border-box;
-      height: 100%;
-      padding: 0;
-      padding-right: 20px;
-
-      .choices__item {
-        display: table-cell;
-        vertical-align: middle;
-      }
-    }
-
-    &--dropdown {
-      box-sizing: border-box;
-
-      .choices__item {
-        padding: 10px;
-
-        &--selectable {
-          transition: opacity $ease-main;
-
-          &.is-highlighted {
-            opacity: .5;
-            background-color: white;
-          }
-        }
-      }
-    }
+  &:not(:first-child) {
+    border-top: 1px solid rgba(black, .1);
   }
 
-  &.is-open & {
-
-    &__inner { border-color: $color-border; }
-
-    &__list {
-      &--dropdown { border-color: $color-border; }
-    }
+  &.selected {
+    color: $color-main;
   }
+}
+
+.SumoSelect .no-match {
+  padding: 0 22px 20px;
+  font-size: 16px;
+  line-height: normal;
+  border: 0;
+  border-radius: 0 !important;
+  word-break: break-all;
+
+  em {
+    font-style: normal;
+  }
+}
+
+.SumoSelect > .optWrapper > .options li.opt:hover {
+  background-color: rgba($color-main, .1);
+  color: $color-main;
+}
+
+.SumoSelect > .optWrapper > .options {
+  padding: 0;
+  max-height: 220px;
+  border-radius: 0;
+
+  @include screen('sm') {
+    max-height: 192px;
+  }
+}
+
+.SumoSelect > .CaptionCont > span.placeholder {
+  color: $color-placeholder;
+  font-style: normal;
+}
+
+.SumoSelect > .optWrapper {
+  z-index: 5;
+}
+
+// Стрелочка
+
+.SumoSelect > .CaptionCont > label {
+  width: 12px;
+  height: 8px;
+  right: 16px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../images/select-arrow.svg');
+  transition: transform $ease-main;
+}
+
+.SumoSelect.open > .CaptionCont > label {
+  transform: rotate(180deg);
+}
+
+.SumoSelect > .CaptionCont > label > i {
+  display: none;
+}
+
+// Множественный выбор (!!!)
+
+.SumoSelect > .optWrapper.multiple > .options li.opt {
+  padding-left: 22px;
+}
+
+.SumoSelect .select-all > span, .SumoSelect > .optWrapper.multiple > .options li.opt span {
+  display: none;
 }

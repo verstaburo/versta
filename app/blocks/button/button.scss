@@ -5,11 +5,12 @@
   vertical-align: middle;
   box-sizing: border-box;
   background-color: transparent;
-  transition: opacity $ease-main;
   cursor: pointer;
   height: 50px;
   line-height: 46px;
-  font-size: 16px;
+
+  @include rule(font-size, (xl: 16px, sm: 14px));
+
   font-weight: 700;
   color: $color-main;
   border-radius: 100px;
@@ -26,9 +27,9 @@
   }
 
   &_big {
-    height: 64px;
-    padding: 0 34px;
-    line-height: 60px;
+    @include rule(height, (xl: 64px, sm: 50px));
+    @include rule(padding, (xl: 0 34px, sm: 0 24px));
+    @include rule(line-height, (xl: 60px, sm: 46px));
   }
 
   &:disabled, &.is-disabled {
@@ -62,6 +63,10 @@
       color: $color-white;
       fill: $color-white;
     }
+  }
+
+  &_bottom {
+    @include rule(margin-top, (xl: 60px, md: 40px, sm: 30px));
   }
 }
 

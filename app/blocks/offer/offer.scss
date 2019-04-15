@@ -1,7 +1,8 @@
 .offer {
   display: block;
-  text-align: left;
-  padding: 210px 0 150px;
+
+  @include rule(text-align, (xl: left, md: center));
+  @include rule(padding, (xl: 210px 0 150px, lg: 160px 0 80px, md: 130px 0 80px, sm: 100px 0 50px));
 
   $b: &;
 
@@ -14,19 +15,29 @@
     @include heading-0;
   }
 
+  &__imagecol {
+    @include rule(order, (md: -1));
+    @include rule(display, (sm: none));
+  }
+
   &__text {
     color: $color-grey;
 
     @include text;
 
+    br {
+      @include rule(display, (sm: none));
+    }
+
     &:not(:first-child) {
-      margin-top: 40px;
+      @include rule(margin-top, (xl: 40px, md: 30px, sm: 24px));
     }
   }
 
   &__button {
+
     &:not(:first-child) {
-      margin-top: 45px;
+      @include rule(margin-top, (xl: 45px, sm: 24px));
     }
   }
 

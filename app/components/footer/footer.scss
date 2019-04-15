@@ -2,13 +2,18 @@
   display: block;
   fill: $color-grey-dark;
   color: $color-grey-dark;
-  padding: 90px 0 100px;
+
+  @include rule(padding, (xl: 90px 0 100px, lg: 60px 0, md: 20px 0 40px, sm: 5px 0 30px));
+  @include rule(border-top, (sm: 1px solid rgba(white, .1)));
+
   font-size: 0;
 
   $b: &;
 
   .container {
     display: flex;
+
+    @include rule(flex-wrap, (md: wrap));
   }
 
   &__title {
@@ -16,17 +21,26 @@
   }
 
   &__list {
-    margin-top: 40px;
+    @include rule(margin-top, (xl: 40px, sm: 20px));
   }
 
   &__col {
+    @include rule(flex, (md: 1, sm: 0 auto));
+    @include rule(padding-top, (md: 40px, sm: 24px));
+    @include rule(width, (sm: 100%));
+
     &:not(:first-child) {
-      margin-left: 120px;
+      @include rule(margin-left, (xl: 120px, md: 80px, sm: 0));
+      @include rule(border-top, (sm: 1px solid rgba(white, .1)));
+      @include rule(margin-top, (sm: 24px));
     }
 
     &_info {
-      flex: 1;
-      text-align: right;
+      @include rule(flex, (xl: 1, md: 1 0 auto));
+      @include rule(text-align, (xl: right, md: left));
+      @include rule(width, (md: 100%));
+      @include rule(margin-left, (md: 0 !important));
+      @include rule(padding-top, (sm: 40px));
     }
   }
 
@@ -34,7 +48,7 @@
     @include text-medium;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      @include rule(margin-top, (xl: 20px, sm: 14px));
     }
   }
 
@@ -56,15 +70,15 @@
   }
 
   &__logo {
+
     svg {
-      width: 123px;
-      height: 20px;
+      @include rule(width, (xl: 123px, sm: 86px));
+      @include rule(height, (xl: 20px, sm: 14px));
     }
   }
 
   &__copyright {
-    margin-top: 40px;
-
+    @include rule(margin-top, (xl: 40px, sm: 24px));
     @include text-mini;
   }
 }

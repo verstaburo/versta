@@ -15,21 +15,56 @@
     top: 0;
     right: 0;
     height: 100%;
-    padding-bottom: 100px;
+
+    @include rule(padding-bottom, (xl: 100px, md: 30px));
+
     background: linear-gradient(to bottom, rgba(black, 1), rgba(black, 0));
     transform-origin: left top;
     pointer-events: none;
     transition: transform $ease-main;
+
+    @include rule(z-index, (md: 1));
   }
 
   &:hover::before {
-    transform: scale(2);
+    // transform: scale(2);
   }
 
   $b: &;
 
+  &__burger-menu {
+    @include screen('md') {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(black, .92);
+      z-index: 0;
+      box-sizing: border-box;
+      padding: 120px 40px 40px;
+      justify-content: center;
+      overflow: auto;
+      flex-wrap: wrap;
+      opacity: 0;
+      transition: opacity $ease-main;
+      display: none;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+
+    @include screen('sm') {
+      padding: 90px 24px 24px;
+    }
+  }
+
   &__logo {
     fill: white;
+
+    @include rule(position, (md: relative));
+    @include rule(z-index, (md: 1));
 
     svg {
       height: 18px;
@@ -46,17 +81,28 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 44px 0;
+
+    @include rule(padding, (xl: 44px 0, sm: 30px 0));
   }
 
   &__menu {
-    display: flex;
+    @include rule(display, (xl: flex, md: block));
+
     left: 50%;
-    position: absolute;
+
+    @include rule(position, (xl: absolute, md: static));
+
     top: 50%;
-    transform: translate(-50%, -50%);
+
+    @include rule(transform, (xl: translate(-50%, -50%), md: none));
+
     align-items: center;
     transition: opacity $ease-main, transform $ease-main;
+    white-space: nowrap;
+
+    @include rule(padding, (md: 30px 0));
+    @include rule(width, (md: 100%));
+    @include rule(margin, (md: auto 0));
 
     #{$b}.is-popup-active & {
       opacity: 0;
@@ -67,9 +113,15 @@
 
   &__actions {
     color: $color-grey;
-    display: flex;
+
+    @include rule(display, (xl: flex, md: block));
+
     align-items: center;
     transition: opacity $ease-main, transform $ease-main;
+
+    @include rule(order, (md: -1));
+    @include rule(margin-bottom, (md: auto));
+    @include rule(width, (md: 100%));
 
     #{$b}.is-popup-active & {
       opacity: 0;
@@ -79,13 +131,25 @@
   }
 
   &__link {
-    font-size: 14px;
+    @include rule(font-size, (xl: 14px, md: 20px, sm: 16px));
+
     line-height: 1;
     transition: color $ease-main;
-    color: $color-grey;
-    fill: $color-grey;
-    display: inline-flex;
+
+    @include rule(padding, (md: 30px 0, sm: 22px 0));
+    @include rule(color, (xl: $color-grey, md: white));
+    @include rule(fill, (xl: $color-grey, md: white));
+    @include rule(display, (xl: inline-flex, md: flex));
+
     align-items: center;
+
+    &_contacts {
+      @include rule(display, (md: none));
+    }
+
+    &_mail {
+      @include rule(display, (lg: none));
+    }
 
     svg {
       width: 15px;
@@ -102,18 +166,28 @@
       color: $color-main;
       font-weight: 500;
 
+      @include rule(border, (md: 2px solid $color-main));
+      @include rule(padding, (md: 24px, sm: 18px));
+      @include rule(border-radius, (md: 10px, sm: 100px));
+      @include rule(box-shadow, (md: 0 5px 20px 0 rgba($color-main, .3)));
+      @include rule(background-color, (md: black));
+      @include rule(justify-content, (md: center));
+
       &:hover {
         color: $color-main-light;
       }
     }
 
     &:not(:last-child) {
-      margin-right: 40px;
+      @include rule(margin-right, (xl: 40px, md: 0));
+      @include rule(border-bottom, (md: 1px solid rgba(white, .1)));
     }
   }
 
   &__contacts-block-wrapper {
-    display: none;
+    @include rule(display, (xl: none, md: block));
+    @include rule(width, (md: 100%));
+    @include rule(margin-top, (md: auto));
   }
 
   &__contacts-block {
@@ -121,9 +195,11 @@
     text-align: left;
 
     div {
+
       &:not(:first-child) {
-        padding: 12px 14px 0;
-        margin: 8px -14px 0;
+        @include rule(padding, (xl: 12px 14px 0, md: 14px 0 0));
+        @include rule(margin, (xl: 8px -14px 0, md: 14px 0 0));
+
         border-top: 1px solid rgba(white, .1);
       }
     }
@@ -165,8 +241,10 @@
     top: 50%;
     transform: translateY(-50%);
     transition: opacity $ease-main;
-    opacity: 0;
-    pointer-events: none;
+
+    @include rule(opacity, (xl: 0, md: 1));
+    @include rule(pointer-events, (xl: none, md: all));
+    @include rule(z-index, (md: 1));
 
     #{$b}.is-popup-active & {
       opacity: 1;

@@ -1,44 +1,39 @@
 [
   {
-    "title": "For clients",
+    "title": "Посетителям и партнерам",
     "links": [
       {
-        "name": "About Us",
+        "name": "Реквизиты",
         "href": "#"
       },
       {
-        "name": "Contacts",
+        "name": "Документы",
         "href": "#"
       },
       {
-        "name": "Courses",
+        "name": "Условия использования",
+        "href": "#"
+      },
+      {
+        "name": "Политика конфиденциальности",
+        "href": "#"
+      },
+      {
+        "name": "NDA",
         "href": "#"
       }
     ]
   },
   {
-    "title": "For partners",
-    "links": [
-      {
-        "name": "Details",
-        "href": "#"
-      },
-      {
-        "name": "Documents",
-        "href": "#"
-      }
-    ]
-  },
-  {
-    "title": "Contacts",
+    "title": "Контакты",
     "links": [
       {
         "name": "+7 (8482) 65-00-38",
-        "href": "#"
+        "href": "tel:+7 (8482) 65-00-38"
       },
       {
         "name": "hello@verstaburo.com",
-        "href": "#"
+        "href": "mailto:hello@verstaburo.com"
       },
       {
         "github": true

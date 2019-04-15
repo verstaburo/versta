@@ -5,6 +5,11 @@
   cursor: pointer;
   font-size: 0;
 
+  & + .parsley-errors-list {
+    position: static;
+    padding-left: 28px;
+  }
+
   &:not(:first-child) {
     margin-top: 16px;
   }
@@ -40,7 +45,9 @@
     height: 16px;
     border: 2px solid $color-grey-dark;
     left: 0;
-    top: 4px;
+
+    @include rule(top, (xl: 4px, sm: 3px));
+
     border-radius: 4px;
     transition: border-color $ease-main, box-shadow $ease-main;
 
@@ -64,5 +71,9 @@
     display: block;
     color: $color-grey;
     transition: color $ease-main;
+
+    a {
+      @extend %link;
+    }
   }
 }

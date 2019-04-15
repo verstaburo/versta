@@ -6,6 +6,8 @@ $ease-icon: .2s ease;
   height: 200px;
   position: relative;
 
+  @include rule(margin, (md: 0 auto));
+
   $b: &;
 
   > * {

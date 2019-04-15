@@ -1,83 +1,91 @@
-// https://github.com/jshjohnson/Choices
-import Choices from 'choices.js';
-
-// https://github.com/leongersen/noUiSlider
-import noUiSlider from 'nouislider';
-
-// https://github.com/t1m0n/air-datepicker
-import 'air-datepicker';
-
-// https://github.com/RobinHerbots/Inputmask
-import Inputmask from 'inputmask';
-
+/* eslint-disable */
 const $ = window.$;
+const grecaptcha = window.grecaptcha;
+const fancyOptions = {
+  afterLoad: function () {
+    freeze();
+    $('.header').addClass('is-popup-active');
+    $('.grecaptcha-badge').addClass('is-visible');
+  },
+  beforeClose: function () {
+    unfreeze();
+    $('.header').removeClass('is-popup-active');
+    $('.grecaptcha-badge').removeClass('is-visible');
+  },
+  touch: false,
+};
 
-export function selects() {
-  /* eslint-disable no-unused-vars */
-  if ($('.js-select').length) {
-    const choices = new Choices('.js-select', {
-      searchEnabled: false,
-      itemSelectText: '',
+// https://www.npmjs.com/package/sumoselect
+import autosize from 'autosize';
+
+// https://www.npmjs.com/package/parsleyjs
+import parsley from '../../../node_modules/parsleyjs/dist/parsley.min';
+
+// http://fancyapps.com/fancybox/3/
+import '@fancyapps/fancybox';
+
+import { freeze, unfreeze } from '../js-functions/freeze';
+
+export function textarea() {
+  autosize($('.js-autosize'));
+}
+
+export function validation() {
+  parsley;
+}
+
+// function validate (form) {
+//   const el = form;
+//
+//   $('#form').parsley();
+// }
+
+export function forms() {
+  const form = $('.js-form');
+
+  // Капча
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeE-p0UAAAAAPbdoOFxb3nScdUQk11s8M080Bwt', {
+      action: 'startproject',
+    }).then(function (token) {
+
+      form.prepend(`<input type="hidden" name="token" value="${token}">`);
+      form.submit(function (e) {
+        e.preventDefault();
+
+        const thisForm = $(this);
+
+        // Проверка капчи
+        $.ajax({
+          method: 'post',
+          url: 'assets/php/recaptcha.php',
+          data: {
+            'token': thisForm.find('[name="token"]').val(),
+          },
+          success: function (data) {
+            // При успешной капче отправляем форму
+            if (data.success === 'true') {
+              // Отправка формы
+              $.ajax({
+                method: 'post',
+                url: 'assets/php/send.php',
+                data: thisForm.serializeArray(),
+                success: function (data) {
+
+                  // Перенести в попап успеха
+                  $.fancybox.open($('#success'), fancyOptions);
+                },
+              });
+
+            } else {
+              console.log('Тест на капчу не пройден');
+            }
+          },
+        });
+
+        return false;
+      });
     });
-  }
-  /* eslint-enable no-unused-vars */
-}
-
-export function sliders() {
-  // Параметры берутся из дата-атрибутов
-  $('.js-range').each(function () {
-    const el = $(this);
-
-    noUiSlider.create(el.get(0), {
-      start: el.data('start'),
-      connect: el.data('connect'),
-      range: {
-        min: el.data('min'),
-        max: el.data('max'),
-      },
-    });
   });
 }
-
-export function datepicker() {
-  $('.js-datepicker').each(function () {
-    const el = $(this);
-
-    el.datepicker();
-  });
-}
-
-export function inputmask() {
-  Inputmask({
-    mask: '+7 (999) 999-99-99',
-  }).mask('input[data-type="tel"]');
-
-  Inputmask({
-    alias: 'email',
-  }).mask('input[data-type="email"]');
-}
-
-export function numberinput() {
-  $(document).on('click', '.js-numberbox-minus, .js-numberbox-plus', function (e) {
-    e.preventDefault();
-
-    const input = $(this).parent().find('.js-numberbox-input');
-    let val = +input.val();
-    const minus = $(this).attr('class').includes('minus') || false;
-
-    if (!val.length) {
-      input.val(1);
-    }
-
-    if (minus) {
-      input.val(val > 0 ? (val -= 1) : 0);
-    } else {
-      input.val(val += 1);
-    }
-  });
-
-  $(document).on('keyup change', '.js-numberbox-input', function () {
-    this.value = this.value.replace(/[^\d]/, '');
-    if ($(this).val() < 0) $(this).val(0);
-  });
-}
+/* eslint-enable */

@@ -1,13 +1,25 @@
 /* eslint-disable */
 
-/**
- * REMOVE IT
- *
- * Скрипты можно писать тут, либо подключать с помощь https://github.com/coderhaoxin/gulp-file-include
- *
- * ВАЖНО: Файлы просто подключаются, без транспиляции (babel) минификации, поэтому нужно писать на ES5
- * Так же доступа к блокам, которые собираются с помощью вебпака не будет.
- */
+@@include('../../node_modules/sumoselect/jquery.sumoselect.js')
 
+// #######################
+// Кастомные селекты
+// #######################
 
+function initializeSelects() {
+  $(document).find('.js-select').each(function () {
+    var el = $(this);
+
+    el.SumoSelect({
+      csvDispCount: 0,
+      floatWidth: 0,
+      placeholder: 'Выберите значение',
+      search: !!el.attr('data-search'),
+      searchText: 'Поиск...',
+      noMatch: 'Нет совпадений для "{0}"',
+    });
+  });
+}
+
+initializeSelects();
 /* eslint-enable */

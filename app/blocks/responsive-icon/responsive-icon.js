@@ -8,6 +8,8 @@ export default function responsiveIcon () {
     mobileClass = 'responsive-icon_mobile',
     w = $(window);
 
+  if (icon.length === 0 || undefined) return;
+
   function checkPosition() {
     const
       sT = w.scrollTop(),

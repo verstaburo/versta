@@ -6,13 +6,13 @@ mixin section()
 mixin section-header(title, pretitle)
   +e.header&attributes(attributes)
     if pretitle
-      +e.P.pretitle!= pretitle
+      +e.P.pretitle.js-sr.js-sr_1!= pretitle
 
     if title
-      +e.H2.title!= title
+      +e.H2.title.js-sr.js-sr_1!= title
 
     if text
-      +e.P.text!= text
+      +e.P.text.js-sr.js-sr_1!= text
 
     block
 

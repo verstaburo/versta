@@ -5,8 +5,11 @@
   $b: &;
 
   &__image {
-    img {
-      height: 80px;
+    @include rule(height, (xl: 80px, sm: 70px));
+
+    img, svg {
+      height: 100%;
+      width: auto;
     }
   }
 
@@ -14,7 +17,7 @@
     @include heading-3;
 
     &:not(:first-child) {
-      margin-top: 45px;
+      @include rule(margin-top, (xl: 45px, sm: 24px));
     }
   }
 
@@ -24,7 +27,151 @@
     color: $color-grey;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      @include rule(margin-top, (xl: 20px, sm: 10px));
+    }
+  }
+}
+
+.icon_pp {
+
+  > * {
+    transform-origin: center;
+    transition: transform $ease-verylong, opacity $ease-verylong, stroke $ease-verylong, fill $ease-verylong;
+  }
+
+  .card:hover & {
+
+    .icon_pp__1 {
+      transform: rotate(90deg);
+    }
+
+    .icon_pp__2 {
+      transform: rotate(-90deg);
+    }
+
+    .icon_pp__3 {
+      transform: rotateY(-180deg);
+    }
+
+    .icon_pp__4 {
+    }
+
+    .icon_pp__5, .icon_pp__6 {
+      transform: rotate(45deg);
+    }
+
+    .icon_pp__7, .icon_pp__8 {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.icon_form {
+
+  > * {
+    transform-origin: center;
+    transition: transform $ease-verylong, opacity $ease-verylong, stroke $ease-verylong, fill $ease-verylong;
+  }
+
+  .card:hover & {
+
+    .icon_form__1 {
+      transform: translate3d(-5px, 0, 0);
+    }
+
+    .icon_form__2 {
+      transform: translate3d(5px, 0, 0);
+    }
+
+    .icon_form__4, .icon_form__5 {
+      transform: translate3d(0, 15px, 0);
+    }
+
+    .icon_form__6, .icon_form__7 {
+      transform: translate3d(0, -15px, 0);
+    }
+
+    .icon_form__10 {
+      fill: white !important;
+    }
+
+    .icon_form__11 {
+      fill: $color-main !important;
+    }
+  }
+}
+
+.icon_notebook {
+
+  > * {
+    transform-origin: center;
+    transition: transform $ease-verylong, opacity $ease-verylong, stroke $ease-verylong, fill $ease-verylong;
+  }
+
+  .card:hover & {
+
+    .icon_notebook__3 {
+      transform: translate3d(0, 2px, 0);
+    }
+
+    .icon_notebook__4 {
+      transform: translate3d(0, 5px, 0);
+    }
+
+    .icon_notebook__5 {
+      transform: translate3d(0, 8px, 0);
+    }
+
+    .icon_notebook__6 {
+      transform: translate3d(0, 12px, 0);
+    }
+
+    .icon_notebook__8, .icon_notebook__9 {
+      transform: translate3d(-5px, 0, 0);
+    }
+  }
+}
+
+.icon_speed {
+
+  > * {
+    transform-origin: center;
+    transition: transform $ease-verylong, opacity $ease-verylong, stroke $ease-verylong, fill $ease-verylong;
+  }
+
+  .card:hover & {
+
+    .icon_speed__2 {
+      transform: scale(.95);
+    }
+
+    .icon_speed__4 {
+      transform: scale(.95) rotate(10deg);
+    }
+  }
+}
+
+.icon_anim {
+
+  > * {
+    transform-origin: center;
+    transition: transform $ease-verylong, opacity $ease-verylong, stroke $ease-verylong, fill $ease-verylong, stroke-dasharray $ease-verylong;
+  }
+
+  .card:hover & {
+
+    .icon_anim__1, .icon_anim__2, .icon_anim__3 {
+      stroke-dasharray: 2;
+    }
+
+    .icon_anim__4 {
+      fill: #121212;
+      transform: translate3d(0, -19px, 0);
+    }
+
+    .icon_anim__5 {
+      fill: $color-main;
+      transform: translate3d(0, -19px, 0);
     }
   }
 }

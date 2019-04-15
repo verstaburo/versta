@@ -1,6 +1,8 @@
 mixin card(image, title, text)
   +b.card&attributes(attributes)
-    +e.image
-      img(src=image)
-    +e.H3.title!= title
-    +e.P.text!= text
+    +e.image.js-sr.js-sr_cycle_1
+      if image
+        img(src=image)
+      block
+    +e.H3.title.js-sr.js-sr_cycle_2!= title
+    +e.P.text.js-sr.js-sr_cycle_3!= text

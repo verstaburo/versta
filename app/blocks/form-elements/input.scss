@@ -10,22 +10,50 @@
   background-color: transparent;
   border: 0;
   color: white;
-  transition: border-color $ease-main;
+  transition: border-color $ease-main, box-shadow $ease-main;
   font-weight: 400;
   cursor: text;
 
   &:focus, &:not(:empty) {
-    & + .label {
+
+    & ~ .label {
       color: $color-main;
     }
   }
 
-  &[required] + .label {
+  &[required] ~ .label {
+
     &::after {
       content: '*';
       color: $color-main;
       margin-left: 2px;
     }
+  }
+
+  &.parsley-error {
+    box-shadow: 0 2px 20px 0 inset rgba($color-red, .2);
+  }
+}
+
+.parsley-errors-list {
+  position: absolute;
+  right: 11px;
+  top: 16px;
+  font-size: 12px;
+  color: #ed144c;
+  font-weight: 500;
+  line-height: 20px;
+  opacity: 0;
+  transform: translate3d(0, 5px, 0);
+  transition: opacity $ease-main, transform $ease-main;
+  z-index: 1;
+  padding: 0 5px;
+  border-radius: 14px;
+  background: rgba(black, .8);
+
+  &.filled {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 

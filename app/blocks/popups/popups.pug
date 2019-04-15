@@ -4,77 +4,87 @@ mixin popups()
 
 mixin popup(heading, description)
   +b.popup&attributes(attributes)
-    .container
-      +e.texts
-        +e.H2.title Start a project
-        if description
-          +e.P.description!= description
-
-      block
+    block
 
 
 mixin popup-start()
-  +popup('Start a project', 'Fill the project and contact information to get the estimation of terms and cost as fast as possible')._small#start
-    +b.form
-      +e.section
-        +e.col_left
-          +e.H3.title Project information
+  +popup()#start
+    +page('Start a project', 'Fill the project and contact information to get the estimation of terms and cost as fast as possible')._small
+      +form(action="#" method="post" enctype="multipart/form-data" data-parsley-validate).js-form
+        +e.section
+          +e.col_left
+            +e.H3.title Project information
 
-        +e.col._right
-          +e.group
-            +inputbox
-              +input(name="" type="text")
-              +label Project Name
+          +e.col._right
+            +e.group
+              +inputbox
+                +select(name="service" type="text")
+                  option(value="Front-end (PSD to HTML)") Front-end (PSD to HTML)
+                  option(value="Front-end + Back-end (CMS)") Front-end + Back-end (CMS)
+                  option(value="E-mail template (PSD to E-mail)") E-mail template (PSD to E-mail)
+                +label Service
 
-            +inputbox
-              +input(name="" type="text")
-              +label Wanted terms
+              +inputbox
+                +input(name="deadline" type="text")
+                +label Deadline
 
-            +inputbox
-              +input(name="" type="text")
-              +label Budget ($)
+              +inputbox
+                +textarea(name="brief" type="text" required)
+                +label Notes / Project brief
 
-            +inputbox
-              +input(name="" type="text")
-              +label Important technologies
+        +e.section
+          +e.col_left
+            +e.H3.title Contact information
 
-      +e.section
-        +e.col_left
-          +e.H3.title Contact information
+          +e.col._right
+            +e.group
+              +inputbox
+                +input(name="name" type="text" required)
+                +label Name
 
-        +e.col._right
-          +e.group
-            +inputbox
-              +input(name="" type="text" required)
-              +label Name
+              +inputbox
+                +input(name="email" type="email" required)
+                +label E-mail
 
-            +inputbox
-              +input(name="" type="text" required)
-              +label E-mail
+              +inputbox
+                +input(name="phone" type="text")
+                +label Skype / Telegram / Phone
 
-            +inputbox
-              +input(name="" type="text")
-              +label Skype / Telegram / Phone
+              +inputbox
+                +input(name="country" type="text")
+                +label Country
 
-            +inputbox
-              +textarea(name="" type="text")
-              +label Notes / Project brief
+        +e.section
+          +e.col_left
+            +e.H3.title Project files, NDA, specification etc.
 
-            +inputbox
-              +input(name="" type="text")
-              +label Country
+          +e.col._right
+            +dropzone.js-dropzone
 
-      +e.section
-        +e.col_left
-          +e.H3.title Project files, NDA, specification etc.
+            +e.box
+              +e.P.text We guarantee NDA for all requests.
+              +checkbox('terms', 'terms', false, true) I accept <a href="terms.html" target="_blank">Terms and Conditions</a>
+              +checkbox('personal', 'personal', false, true) I consent to processing of my personal data and accept <a href="policy.html" target="_blank">Privacy Policy</a>.
 
-        +e.col._right
-          +dropzone.js-dropzone
+            +e.button
+              #js-captcha
+              +button('button', true)(type="submit")._big Get estimation
 
-          +e.box
-            +e.P.text We guarantee NDA for all requests.
-            +checkbox() I accept Terms and Conditions
-            +checkbox() I consent to processing of my personal data and accept Privacy Policy.
-
-          +e.button
-            +button('button', true)(type="submit")._big Get estimation
+  mixin popup-success()
+    +popup()#success
+      +page('Your request successfully sent!', 'We will contact you as soon as possible, thanks for your trust!')._small
+        +content-zone
+          img(src="assets/images/dog_3.webp")
+          p You can contact us more quickly by contacts below.
+          p We work from Monday to Friday, 9:00-18:00 (GMT +4).
+          ul
+            li <a href="tel:+7 (8482) 65-00-38">+7 (8482) 65-00-38</a> (Russia)
+            li
+              a(href="mailto:hello@verstaburo.com")
+                +icon('mail')
+                span hello@verstaburo.com
+            li
+              a(href="https://t.me/ververy")
+                +icon('telegram')
+                span @ververy
+        +button('button', true)(type="button" data-fancybox-close)._big._bottom Back to page

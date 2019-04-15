@@ -1,113 +1,142 @@
 .content-zone {
+  display: block;
+  color: $color-grey;
 
-  h1 {
+  @include text-small;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
+  $b: &;
 
-    @include heading-1;
+  a {
+    @extend %link;
   }
 
-  h2 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
+  h1, h2, h3, h4, h5, h6 {
     @include heading-2;
-  }
 
-  h3 {
+    color: white;
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 60px, sm: 40px));
     }
 
-    @include heading-3;
-  }
-
-  h4 {
-
     &:not(:last-child) {
-      margin-bottom: 10px;
+      @include rule(margin-bottom, (xl: 40px, md: 30px, sm: 20px));
     }
-
-    @include heading-4;
-  }
-
-  h5 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-5;
-  }
-
-  h6 {
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    @include heading-6;
   }
 
   p {
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 20px, sm: 12px));
     }
-
-    small {
-      display: block;
-
-      @include text-small;
-    }
-
-    @include text;
   }
 
-  blockquote {
-    margin: 0;
-    padding-left: 40px;
-    border-left: 2px solid black;
-    display: block;
+  ol, ul, table, img {
 
     &:not(:first-child) {
-      margin-top: 30px;
+      @include rule(margin-top, (xl: 40px, sm: 30px));
     }
 
     &:not(:last-child) {
-      margin-bottom: 30px;
+      @include rule(margin-bottom, (xl: 40px, sm: 30px));
     }
   }
 
   img {
     max-width: 100%;
+    border-radius: 3px;
+    display: block;
+  }
 
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
+  ol, ul {
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
+    li {
+      position: relative;
+      padding-left: 30px;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $color-main;
+        font-weight: 500;
+      }
     }
   }
 
-  > ul, > ol {
+  ul {
 
-    &:not(:last-child) {
-      margin-bottom: 10px;
+    li::before {
+      content: '—';
     }
   }
 
-  ul, ol { @include list; }
+  ol {
+    counter-reset: list;
 
-  ul { @include ullist; }
+    li {
+      counter-increment: list;
 
-  ol { @include ollist; }
+      &::before {
+        content: counter(list) '.';
+      }
+    }
+  }
 
-  a { @include link; }
+  table {
+    @include rule(display, (sm: block));
+    @include rule(padding-left, (sm: 20px));
+    @include rule(border-left, (sm: 1px solid $color-main));
+
+    tbody {
+      @include rule(display, (sm: block));
+      @include rule(width, (sm: 100%));
+    }
+
+    b {
+      font-weight: 400;
+      color: white;
+    }
+
+    td {
+      @include rule(display, (sm: block));
+      @include rule(width, (sm: 100%));
+
+      &:not(:last-child) {
+        @include rule(padding-right, (xl: 40px, sm: 0));
+        @include rule(padding-bottom, (sm: 10px));
+      }
+    }
+
+    tr {
+      @include rule(display, (sm: block));
+      @include rule(width, (sm: 100%));
+
+      &:not(:first-child) {
+        @include rule(padding-top, (sm: 20px));
+        @include rule(border-top, (sm: 1px solid $color-main));
+
+        td {
+          @include screen('sm', min) {
+            padding-top: 30px;
+            border-top: 1px solid $color-main;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        @include rule(padding-bottom, (sm: 20px));
+
+        td {
+          @include screen('sm', min) {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
 }

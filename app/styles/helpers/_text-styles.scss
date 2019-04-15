@@ -1,25 +1,29 @@
 // Текстовые стили, используемые на сайте
 
 @mixin heading-0 {
-  font-size: 72px;
+  @include rule(font-size, (xl: 72px, lg: 48px, md: 40px, sm: 30px));
+
   line-height: 1.2;
   font-weight: 500;
 }
 
 @mixin heading-1 {
-  font-size: 50px;
+  @include rule(font-size, (xl: 50px, lg: 40px, sm: 26px));
+
   line-height: 1.2;
   font-weight: 500;
 }
 
 @mixin heading-2 {
-  font-size: 30px;
+  @include rule(font-size, (xl: 30px, lg: 24px, sm: 20px));
+
   font-weight: 500;
   line-height: 1.5;
 }
 
 @mixin heading-3 {
-  font-size: 20px;
+  @include rule(font-size, (xl: 20px, sm: 16px));
+
   line-height: 1.7;
   font-weight: 500;
 }
@@ -37,19 +41,22 @@
 }
 
 @mixin text {
-  font-size: 20px;
+  @include rule(font-size, (xl: 20px, lg: 18px, sm: 16px));
+
   line-height: 1.7;
   font-weight: 300;
 }
 
 @mixin text-small {
-  font-size: 16px;
+  @include rule(font-size, (xl: 16px, sm: 14px));
+
   line-height: 1.8;
   font-weight: 300;
 }
 
 @mixin text-medium {
-  font-size: 14px;
+  @include rule(font-size, (xl: 14px, sm: 12px));
+
   line-height: 1.8;
   font-weight: 300;
 }

@@ -1,0 +1,26 @@
+.page {
+  display: block;
+
+  @include rule(padding, (xl: 160px 0 80px, md: 130px 0 50px, sm: 100px 0 30px));
+
+  $b: &;
+
+  &_small .container {
+    width: 900px;
+  }
+
+  &__head {
+    @include rule(margin-bottom, (xl: 80px, lg: 60px, md: 40px, sm: 30px));
+  }
+
+  &__title {
+    @include heading-0;
+  }
+
+  &__description {
+    margin-top: 20px;
+    color: $color-grey;
+
+    @include text;
+  }
+}
