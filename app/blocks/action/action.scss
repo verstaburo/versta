@@ -64,6 +64,7 @@
   }
 
   &__col {
+
     &:not(:first-child) {
       @include screen('sm', min) {
         margin-left: auto;
