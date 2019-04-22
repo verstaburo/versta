@@ -29,7 +29,7 @@
   &__image {
     width: 100%;
 
-    @include rule(filter, (xl: grayscale(100%)));
+    @include rule(filter, (xl: grayscale(100%), md: grayscale(0)));
 
     overflow: hidden;
     display: block;
@@ -49,13 +49,21 @@
 
     img {
       @include fill-img;
+
+      bottom: auto;
     }
   }
 
   @keyframes flow {
-    0% { transform: translate3d(0, -20px, 0); }
-    50% { transform: translate3d(0, 20px, 0); }
-    100% { transform: translate3d(0, -20px, 0); }
+    0% {
+      transform: translate3d(0, -20px, 0);
+    }
+    50% {
+      transform: translate3d(0, 20px, 0);
+    }
+    100% {
+      transform: translate3d(0, -20px, 0);
+    }
   }
 
   &__bgimage {
@@ -70,6 +78,10 @@
     left: 0;
     opacity: 0;
     transition: opacity $ease-main;
+
+    .is-ie & {
+      display: none;
+    }
 
     #{$b}:hover & {
       @include screen('md', min) {
@@ -134,7 +146,7 @@
     box-sizing: border-box;
     z-index: 2;
 
-    @include rule(padding, (xl: 40px 40px 30px, lg: 30px 30px 24px, sm: 24px));
+    @include rule(padding, (xl: 30px 40px 30px, lg: 24px 30px 24px, sm: 24px));
 
     display: flex;
     border-radius: 3px;

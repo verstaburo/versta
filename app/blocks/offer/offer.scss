@@ -17,7 +17,6 @@
 
   &__imagecol {
     @include rule(order, (md: -1));
-    @include rule(display, (sm: none));
   }
 
   &__text {

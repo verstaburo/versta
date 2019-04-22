@@ -33,6 +33,10 @@
   $b: &;
 
   &__burger-menu {
+    @include screen('md', min) {
+      display: block !important;
+    }
+
     @include screen('md') {
       position: fixed;
       left: 0;
@@ -105,9 +109,11 @@
     @include rule(margin, (md: auto 0));
 
     #{$b}.is-popup-active & {
-      opacity: 0;
-      pointer-events: none;
-      transform: translate3d(-50%, calc(-50% - 10px), 0);
+      @include screen('md', min) {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate3d(-50%, calc(-50% - 10px), 0);
+      }
     }
   }
 
@@ -123,10 +129,20 @@
     @include rule(margin-bottom, (md: auto));
     @include rule(width, (md: 100%));
 
+
+    @include screen('md', min) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
     #{$b}.is-popup-active & {
-      opacity: 0;
-      pointer-events: none;
-      transform: translate3d(0, -10px, 0);
+      @include screen('md', min) {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate3d(0, -10px, 0);
+      }
     }
   }
 

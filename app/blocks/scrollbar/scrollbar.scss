@@ -1,0 +1,19 @@
+@import '../../node_modules/overlayscrollbars/css/OverlayScrollbars.min.css';
+
+.scrollbar {
+  display: block;
+
+  $b: &;
+}
+
+.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  background: rgba(white, 0.2);
+}
+
+.os-theme-dark > .os-scrollbar, .os-theme-light > .os-scrollbar {
+  padding: 6px;
+}
+
+.os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical {
+  width: 18px;
+}

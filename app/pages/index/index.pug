@@ -1,51 +1,62 @@
-extends ../../layouts/default
+extends ../../layouts/default_en
 
 block head
-  - var pageTitle = 'Versta — Front-end Development Bureau'
+  - var pageTitle = en ? 'Versta {Front-end Development Bureau}' : 'Versta — Бюро фронтенд-разработки'
 
 block content
-  +offer(getData('offer').index)
+  +offer((en ? getData('offer')["index_en"] : getData('offer')["index"]))
   +video-background('assets/videos/video1.mp4')
   +section#works
-    +section-header('Наши работы', 'Что мы создаем')
+    +section-header((en ? 'Our works' : 'Наши работы'), (en ? 'What we create' : 'Что мы создаем'))
     +section-content
       +grid
         +col({xl: 4, md: 6, sm: 12}).js-sr.js-sr_1
-          +work('Кредит Европа Банк', 'assets/images/works/case1.png', ['Responsive'], '3 hours')(href="#")
+          +work((en ? 'Credit Europe Bank' : 'Кредит Европа Банк'), 'assets/images/works/ceb.jpg', [(en ? 'Adaptive' : 'Адаптив'), (en ? 'Logics' : 'Логика'), (en ? 'Animations' : 'Анимации')], (en ? '27 hours' : '27 часов'))(href="https://verstaburo.com/works/keb/" target="_blank")
         +col({xl: 4, md: 6, sm: 12}).js-sr.js-sr_1
-          +work('MyBI Бизнес Аналитика', 'assets/images/works/case2.png', ['Responsive'], '3 hours')(href="#")
+          +work((en ? 'Heart of Eurasia Foundation ' : 'Фонд Сердце Евразии'), 'assets/images/works/eurasia.jpg', [(en ? 'BEM' : 'БЭМ'), (en ? 'Responsive' : 'Респонсив'), (en ? 'Logics' : 'Логика'), 'AJAX', (en ? 'Animations' : 'Анимации')], (en ? '36 hours' : '36 часов'))(href="https://verstaburo.com/works/eurasia/" target="_blank")
         +col({xl: 4, md: 12})
           +grid
             +col({xl: 12, md: 6, sm: 12}).js-sr.js-sr_1
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['BEM', 'Parallax', 'Responsive', 'Animations', 'SPA'], '3 hours')(href="#")._small
+              +work((en ? 'Pro Trener Sport Service' : 'Спортивный сервис Pro Trener'), 'assets/images/works/protrener.jpg', [(en ? 'BEM' : 'БЭМ'), (en ? 'Responsive' : 'Респонсив'), (en ? 'Animations' : 'Анимации'), 'AJAX'], (en ? '30 hours' : '30 часов'))(href="https://verstaburo.com/works/protrener/sitemap.html" target="_blank")._small
             +col({xl: 12, md: 6, sm: 12}).js-sr.js-sr_1
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
+              +work((en ? 'Joy By Joy Blogger Contest' : 'Конкурс блогеров Joy By Joy'), 'assets/images/works/joy_by_joy.jpg', [(en ? 'Adaptive' : 'Адаптив'), (en ? 'Animations' : 'Анимации')], (en ? '14 hours' : '14 часов'))(href="https://verstaburo.com/works/joybyjoy/" target="_blank")._small
         +col({xl: 4, md: 12})
           +grid
             +col({xl: 12, md: 6, sm: 12}).js-sr.js-sr_1
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
+              +work((en ? 'Russia of the Future Project' : 'Проект Россия Будущего'), 'assets/images/works/russia2035.jpg', ['Адаптив', (en ? 'Animations' : 'Анимации'), (en ? 'Logics' : 'Логика')], (en ? '13 hours' : '13 часов'))(href="https://verstaburo.com/works/russia2035/" target="_blank")._small
             +col({xl: 12, md: 6, sm: 12}).js-sr.js-sr_1
-              +work('Gleb Gorokhov Website', 'assets/images/works/case3.png', ['Responsive'], '3 hours')(href="#")._small
+              +work((en ? 'CAT Corporate Website' : 'Корпоративный сайт CAT'), 'assets/images/works/cat.jpg', [(en ? 'BEM' : 'БЭМ'), (en ? 'Responsive' : 'Респонсив'), (en ? 'Animations' : 'Анимации'), (en ? 'Logics' : 'Логика'), 'AJAX'], (en ? '32 hours' : '32 часа'))(href="https://verstaburo.com/works/cat/" target="_blank")._small
         +col({xl: 4, md: 6, sm: 12}).js-sr.js-sr_1
-          +work('Credit Europe Bank', 'assets/images/works/case1.png', ['Responsive'], '3 hours')(href="#")
+          +work((en ? 'ProSwim Online Store' : 'Интернет-магазин ProSwim'), 'assets/images/works/proswim.jpg', [(en ? 'BEM' : 'БЭМ'), (en ? 'Responsive' : 'Респонсив'), (en ? 'Logics' : 'Логика')], (en ? '117 hours' : '117 часов'))(href="https://verstaburo.com/works/proswim/sitemap.html" target="_blank")
         +col({xl: 4, md: 6, sm: 12}).js-sr.js-sr_1
-          +work('MyBI Business Analytics', 'assets/images/works/case2.png', ['Responsive'], '3 hours')(href="#")
-      +action('Есть проект?', 'Получите оценку стоимости и сроков в течение дня', 'Начать проект').js-sr.js-sr_1
+          +work((en ? 'PurPur – Flowers and Plants' : 'ПурПур — Цветы и Растения'), 'assets/images/works/purpur.jpg', ['Адаптив', (en ? 'Animations' : 'Анимации'), (en ? 'Logics' : 'Логика')], (en ? '33 hours' : '33 часа'))(href="http://purpur.verstaburo.com/" target="_blank")
+      +action((en ? 'Do you have a project?' : 'Есть проект?'), (en ? 'Find out about the price and terms within a day' : 'Получите оценку стоимости и сроков в течение дня'), (en ? 'Get the estimation' : 'Получить оценку')).js-sr.js-sr_1
 
   +section._center#partners
-    +section-header('Лучшие Digital-агентства<br>России доверяют нам', 'Наши партнеры')
+    +section-header((en ? 'Successful digital agencies<br> from Russia and Europe trust us' : 'Успешные Digital-агентства<br>из России и Европы доверяют нам'), (en ? 'Our Partners' : 'Наши партнеры'))
     +section-content
       +agencies
 
-  +section#about
-    +section-header('Верстка из PSD/Figma/Sketch и полноценная фронтенд-разработка с фокусом на качестве', 'Наша компетенция')
+  +section._about#about
+    +section-header((en ? 'PSD/Figma/Sketch to HTML+CSS+JS conversion and full front-end development focused on quality' : 'Верстка из PSD/Figma/Sketch и полноценная фронтенд-разработка с фокусом на качестве'), (en ? 'Our Competence' : 'Наша компетенция'))
     +section-content
       +grid
         +col({xl: 4, md: 6, sm: 12})
-          +card('assets/images/icons/bem.svg', 'БЭМ + Гибкость', 'Полное соответствие методологии и компонентный подход. Любой блок адаптируется под любой контент')
+          +card(false, (en ? 'BEM + Flexibility' : 'БЭМ + Гибкость'), (en ? 'Full compliance with the methodology and component approach. Any block is adapted for any content' : 'Полное соответствие методологии и компонентный подход. Любой блок адаптируется под любой контент'))
+            <svg version="1.1" class="icon_bem" xmlns="http://www.w3.org/2000/svg" width="97" height="80" viewBox="0 0 97 80" fill="#C1AD78">
+              <rect class="icon_bem__1" x="0" y="12.4" width="22.7" height="6.7"/>
+              <rect class="icon_bem__2" x="0" width="22.7" height="6.7"/>
+              <path class="icon_bem__3" d="M40.7,24.7H0v6.7h39.2c4.3,0,14.3,0.1,18,6.1v-3.7C55.4,27.8,50,24.7,40.7,24.7z"/>
+              <path class="icon_bem__4" d="M40.8,37H0v6.7h39.2c9.5,0,15.5,0.4,18,1.7v-3C55.3,37.8,47.3,37,40.8,37z"/>
+              <path class="icon_bem__5" d="M40.7,68.5H0v-6.7h39.2c4.3,0,14.3-0.1,18-6.1v3.7C55.4,65.3,50,68.5,40.7,68.5z"/>
+              <path class="icon_bem__6" d="M40.8,56.1H0v-6.7h39.2c9.5,0,15.5-0.4,18-1.7v3C55.3,55.3,47.3,56.1,40.8,56.1z"/>
+              <path class="icon_bem__7" d="M67.1,80H97v-4.1H68c-2.6,0-8.7-0.1-10.9-3.6v2.3C58.1,78.1,61.4,80,67.1,80z"/>
+              <path class="icon_bem__8" d="M67,72.5H97v-4.1H68c-5.8,0-9.4-0.2-10.9-1v1.8C58.2,72,63.1,72.5,67,72.5z"/>
+            </svg>
+
 
         +col({xl: 4, md: 6, sm: 12})
-          +card(false, 'Pixel-Perfect', '100% соответствие дизайну везде, где это возможно')
+          +card(false, (en ? 'Pixel Perfect' : 'Pixel-Perfect'), (en ? '100% matching design wherever possible.' : '100% соответствие дизайну везде, где это возможно'))
             <svg width="82" height="81" viewBox="0 0 82 81" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon_pp">
               <rect x="12" y="1" width="58" height="78" rx="9" stroke="#121212" stroke-width="2" class="icon_pp__1"/>
               <rect x="2" y="11" width="78" height="58" rx="9" stroke="#121212" stroke-width="2" class="icon_pp__2"/>
@@ -59,7 +70,7 @@ block content
 
 
         +col({xl: 4, md: 6, sm: 12})
-          +card(false, 'Логика и функционал', 'Реализуем любой необходимый функционал — от простых функций до парсинга массивов, сложный форм, SPA и т.д.')
+          +card(false, (en ? 'Logic and Functionality' : 'Логика и функционал'), (en ? 'We implement any functionality you need – from simple functions to parsing arrays, complex forms, SPA, etc.' : 'Реализуем любой необходимый функционал — от простых функций до парсинга массивов, сложный форм, SPA и т.д.'))
             <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon_form">
               <path class="icon_form__1" d="M9.87 17.21V36.6C9.87 37.0667 9.75333 37.72 9.52 38.56C9.33333 39.4 8.86667 40.1467 8.12 40.8C8.86667 41.4533 9.33333 42.2233 9.52 43.11C9.75333 43.95 9.87 44.58 9.87 45V65.16H13.72V68.17H8.19C7.81667 68.17 7.44333 68.0067 7.07 67.68C6.74333 67.4 6.58 66.8633 6.58 66.07V45.77C6.58 44.93 6.37 44.1367 5.95 43.39C5.57667 42.6433 4.97 42.2233 4.13 42.13V39.33C4.59667 39.33 4.99333 39.19 5.32 38.91C5.64667 38.63 5.90333 38.3033 6.09 37.93C6.27667 37.5567 6.39333 37.1833 6.44 36.81C6.53333 36.39 6.58 36.0633 6.58 35.83V16.3C6.58 15.3667 6.79 14.7833 7.21 14.55C7.63 14.3167 7.95667 14.2 8.19 14.2H13.72V17.21H9.87Z" fill="#121212"/>
               <path class="icon_form__2" d="M84.64 17.21V14.2H90.17C90.3567 14.2 90.66 14.3167 91.08 14.55C91.5467 14.7833 91.78 15.3667 91.78 16.3V35.83C91.78 36.0633 91.8033 36.39 91.85 36.81C91.9433 37.1833 92.0833 37.5567 92.27 37.93C92.4567 38.3033 92.69 38.63 92.97 38.91C93.2967 39.19 93.7167 39.33 94.23 39.33V42.13C93.3433 42.2233 92.7133 42.6433 92.34 43.39C91.9667 44.1367 91.78 44.93 91.78 45.77V66.07C91.78 66.8633 91.5933 67.4 91.22 67.68C90.8933 68.0067 90.5433 68.17 90.17 68.17H84.64V65.16H88.49V45C88.49 44.58 88.5833 43.95 88.77 43.11C89.0033 42.2233 89.4933 41.4533 90.24 40.8C89.4933 40.1467 89.0033 39.4 88.77 38.56C88.5833 37.72 88.49 37.0667 88.49 36.6V17.21H84.64Z" fill="#121212"/>
@@ -75,7 +86,7 @@ block content
             </svg>
 
         +col({xl: 4, md: 6, sm: 12})
-          +card(false, 'Адаптивно и кроссбраузерно', 'Идеальное отображение сайта в любом браузере, на любом устройстве')
+          +card(false, (en ? 'Adaptive and Cross-Browser' : 'Адаптивно и кроссбраузерно'), (en ? 'Perfect website display in any browser, on any device' : 'Идеальное отображение сайта в любом браузере, на любом устройстве'))
             <svg width="107" height="80" viewBox="0 0 107 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon_notebook">
               <path class="icon_notebook__1" d="M21 6H79C81.7614 6 84 8.23858 84 11V65C84 65.5523 83.5523 66 83 66H17C16.4477 66 16 65.5523 16 65V11C16 8.23858 18.2386 6 21 6Z" stroke="#121212" stroke-width="2"/>
               <path class="icon_notebook__2" d="M1.66667 71H98.3333C98.7015 71 99 71.2985 99 71.6667C99 75.7168 95.7168 79 91.6667 79H8.33334C4.28325 79 1 75.7168 1 71.6667C1 71.2985 1.29848 71 1.66667 71Z" stroke="#C1AD78" stroke-width="2"/>
@@ -90,7 +101,7 @@ block content
 
 
         +col({xl: 4, md: 6, sm: 12})
-          +card(false, 'Семантика и оптимизация', 'Используем теги HTML5 по назначению, оптимизируем верстку для максимально быстрой работы')
+          +card(false, (en ? 'Semantics and Optimization' : 'Семантика и оптимизация'), (en ? 'We use HTML5 tags as intended, optimize the makeup for as fast work as possible' : 'Используем теги HTML5 по назначению, оптимизируем верстку для максимально быстрой работы'))
             <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon_speed">
               <circle class="icon_speed__1" cx="40" cy="40" r="39" stroke="#C1AD78" stroke-width="2"/>
               <circle class="icon_speed__2" cx="40" cy="40" r="34" stroke="#121212" stroke-width="2"/>
@@ -99,7 +110,7 @@ block content
             </svg>
 
         +col({xl: 4, md: 6, sm: 12})
-          +card(false, 'Изящные анимации', 'Оживим верстку оптимизированными анимациями, быстро работающими даже на слабых устройствах')
+          +card(false, (en ? 'Graceful Animations' : 'Изящные анимации'), (en ? 'We create optimized animations that work quickly even on weak devices' : 'Оживим верстку оптимизированными анимациями, быстро работающими даже на слабых устройствах'))
             <svg width="90" height="80" viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon_anim">
               <line class="icon_anim__1" x1="26.8872" y1="1.53865" x2="65.8872" y2="76.5387" stroke="#242424" stroke-width="2" stroke-dasharray="3 3"/>
               <line class="icon_anim__2" x1="3.34472" y1="75.2446" x2="86.3447" y2="3.24461" stroke="#242424" stroke-width="2" stroke-dasharray="3 3"/>

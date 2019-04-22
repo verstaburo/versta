@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /work
+Host: verstaburo.com
+
+User-agent: Yandex
+Disallow: /work

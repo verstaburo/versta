@@ -15,6 +15,10 @@
     border-top: 0 !important;
   }
 
+  &_about {
+    @include rule(text-align, (sm: center));
+  }
+
   &_center {
     text-align: center;
   }

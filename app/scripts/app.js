@@ -2,6 +2,7 @@
 import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
 import './globalOptions';
+import checkie from '../blocks/js-functions/checkie';
 import anchor from '../blocks/js-functions/anchor';
 import scrollanimation from '../blocks/js-functions/scrollanimation';
 import { textarea, validation, forms } from '../blocks/form-elements/form-elements';
@@ -11,6 +12,7 @@ import tooltips from '../blocks/tooltip/tooltip';
 import responsiveIcon from '../blocks/responsive-icon/responsive-icon';
 import agencies from '../blocks/agencies/agencies';
 import dropzones from '../blocks/dropzone/dropzone';
+import scrollbar from '../blocks/scrollbar/scrollbar';
 import header from '../components/header/header';
 import videoBackground from '../blocks/video-background/video-background';
 
@@ -19,6 +21,7 @@ const $ = window.$;
 $(() => {
   svg4everybody();
   objectFitImages();
+  checkie();
   anchor();
   popups();
   slider();
@@ -32,5 +35,6 @@ $(() => {
   textarea();
   validation();
   forms();
+  scrollbar();
 });
 /* eslint-enable */

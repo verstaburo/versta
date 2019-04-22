@@ -5,7 +5,7 @@
 
   &__agency {
     @include rule(max-width, (xl: 200px, lg: 140px, sm: 100px));
-    @include rule(max-height, (xl: 100px, lg: 60px, sm: 40px));
+    @include rule(max-height, (xl: 70px, lg: 50px, sm: 40px));
   }
 
   &__slider {
@@ -34,7 +34,7 @@
   }
 
   &__content-slider {
-    margin-top: 10px;
+    margin-top: 25px;
 
     .swiper-slide {
       opacity: 0;
@@ -78,9 +78,10 @@
 
   &__text {
     @include text;
-    @include rule(margin-top, (xl: 40px, sm: 24px));
+    @include rule(margin-top, (xl: 40px, lg: 30px, sm: 24px));
 
     max-width: 800px;
+    width: 100%;
     color: $color-grey;
   }
 
@@ -119,6 +120,7 @@
       margin-left: 25px;
       font-size: 16px;
       font-weight: 500;
+      text-align: left;
     }
   }
 }

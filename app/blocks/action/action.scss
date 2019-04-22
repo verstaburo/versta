@@ -63,5 +63,14 @@
     @include rule(padding-bottom, (sm: 20px));
   }
 
+  &__col {
+    &:not(:first-child) {
+      @include screen('sm', min) {
+        margin-left: auto;
+        padding-left: 40px;
+      }
+    }
+  }
+
   $b: &;
 }

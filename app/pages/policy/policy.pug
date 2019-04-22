@@ -1,65 +1,122 @@
-extends ../../layouts/default
+extends ../../layouts/default_en
 
 block head
-  - var pageTitle = 'Versta | Privacy Policy'
+  - var pageTitle = en ? 'Privacy Policy - Versta' : 'Политика конфиденциальности - Versta'
 
 block content
-  +page('Privacy Policy', false, true)
+  +page((en ? 'Privacy Policy' : 'Политика конфиденциальности'), false, true)
     +content-zone.js-sr.js-sr_1
-      p The following Privacy Policy describes your privacy rights regarding our collection, use, storage, sharing, and protection of your information and personal data. It applies to the www.psd2html.com website (the “Site”) and all services offered by P2H Inc. (collectively “P2H” or “we”).
-      p When you (“you” or the “Client”) use this Site and its services (the “Services”) and provide us with your information and personal data, you are agreeing to the rules and regulations under our Privacy Policy and are bound by it.
-      p If you do not agree to our Privacy Policy please do not use the Site and its Services.
-      p This Privacy Policy may be updated from time to time and will be published on this Site.
-      p For the purpose of data protection legislation including General Data Protection Regulation 2016 (Regulation (EU) 2016/679) the data controller is:
-      p P2H Inc., 7848 W Sahara Ave, Las Vegas, NV 89117
-      p P2H respects you, your information and personal data.
-      p We make sure we collect and store your information and personal data securely.
-      p You’re in control of your personal data and you can manage your preferences in Client Area at any time.
+      if !en
+        h2 1. Общие положения
+        p Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных ИП Горохова Глеба Владимировича (далее – Оператор).
+        p Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.
+        p Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>.
 
-      h2 Personal data we collect
+        h2 2. Основные понятия, используемые в Политике
+        ul
+          li Автоматизированная обработка персональных данных – обработка персональных данных с помощью средств вычислительной техники;
+          li Блокирование персональных данных – временное прекращение обработки персональных данных (за исключением случаев, если обработка необходима для уточнения персональных данных);
+          li Веб-сайт – совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>;
+          li Информационная система персональных данных — совокупность содержащихся в базах данных персональных данных, и обеспечивающих их обработку информационных технологий и технических средств;
+          li Обезличивание персональных данных — действия, в результате которых невозможно определить без использования дополнительной информации принадлежность персональных данных конкретному Пользователю или иному субъекту персональных данных;
+          li Обработка персональных данных – любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных;
+          li Оператор – государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными;
+          li Персональные данные – любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>;
+          li Пользователь – любой посетитель веб-сайта <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>;
+          li Предоставление персональных данных – действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц;
+          li Распространение персональных данных – любые действия, направленные на раскрытие персональных данных неопределенному кругу лиц (передача персональных данных) или на ознакомление с персональными данными неограниченного круга лиц, в том числе обнародование персональных данных в средствах массовой информации, размещение в информационно-телекоммуникационных сетях или предоставление доступа к персональным данным каким-либо иным способом;
+          li Трансграничная передача персональных данных – передача персональных данных на территорию иностранного государства органу власти иностранного государства, иностранному физическому или иностранному юридическому лицу;
+          li Уничтожение персональных данных – любые действия, в результате которых персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и (или) результате которых уничтожаются материальные носители персональных данных.
 
-      p When using the term “personal data” in our Privacy Policy, we mean information that relates to you and allows us to identify you, either directly or indirectly. We may collect, store and use any personal data you provide us directly by completing forms on the Site, making purchases through the Site, subscribing to the newsletter or by corresponding with us by email, phone or otherwise. This information may include your first and last name, postal address, profession/role, place of work, email address and phone number.
-      p We also collect, store and use information about your computer and about your visits to and use of this Site (including your IP address, browser type and version, operating system, referral source, length of visit, geographical location, page views and website navigation paths).
-      p We do not collect and store any sensitive information about you. We knowingly do not collect any information from children under 16 years old.
+        h2 3. Оператор может обрабатывать следующие персональные данные Пользователя
+        ul
+          li Фамилия, имя, отчество;
+          li Электронный адрес;
+          li Номера телефонов;
+          li Страна;
+          li Контакты в сервисах Skype и Telegram;
+        p Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т.ч. файлов «cookie») с помощью сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).
+        p Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.
 
-      h2 Purposes of personal data use
+        h2 4. Цели обработки персональных данных
+        p Цель обработки персональных данных Пользователя — оценка стоимости и сроков выполнения проекта, информирование о результатах оценки, обсуждение возможности сотрудничества.
+        p Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> с пометкой «Отказ от уведомлениях о новых продуктах и услугах и специальных предложениях».
+        p Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.
 
-      p Personal data submitted to us through this Site and personal data we collected from you or third parties or from public sources will be used for the purposes specified in this Privacy Policy.
-      p Depending on the relationships we may use your personal data for the following purposes:
+        h2 5. Правовые основания обработки персональных данных
+        p Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.
+        p Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).
 
-      table(cellspacing=0 cellpadding=0)
-        tr
-          td <b>Service provision</b>
-          td The personal data you provide when placing an order through Order Now is used to complete your order.
-        tr
-          td <b>Communications</b>
-          td We may need to contact you by email for operational reasons, for example in order to notify you about the status of your order.
-        tr
-          td <b>Marketing</b>
-          td
-            p We may inform you about news and offers that you may like, for example, by sending you occasional P2H newsletters.
-            p If you choose to receive email marketing from P2H, we can let you know when there are special offers, or to tell you about our news.
-            p You can stop receiving marketing information from us at any time by pushing “Unsubscribe” link in the email or by emailing us to <a href="mailto:support@psd2html.com">support@psd2html.com</a>.
-        tr
-          td <b>Finance and security</b>
-          td The purposes for which we will use your information include accounting, billing and audit, payment card verification, fraud screening, safety, security and legal purposes, statistical and marketing analysis.
+        h2 6. Порядок сбора, хранения, передачи и других видов обработки персональных данных
+        p Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.
+        p Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.
+        p Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.
+        p В случае выявления неточностей в персональных данных, Пользователь может актуализировать их самостоятельно, путем направления Оператору уведомление на адрес электронной почты Оператора <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> с пометкой «Актуализация персональных данных».
+        p Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный адрес Оператора <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> с пометкой «Отзыв согласия на обработку персональных данных».
 
-      h2 Your rights
+        h2 7. Трансграничная передача персональных данных
+        p Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.
+        p Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.
 
-      p In respect to your personal data you have the right to:
+        h2 8. Заключительные положения
+        p Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a>.
+        p В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.
+        p Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://verstaburo.com" target="_blank">https://verstaburo.com/policy.html</a>.
 
-      ul
-        li request access to the personal data that we hold about you or a copy of it;
-        li correct (rectify) your personal data if it is inaccurate;
-        li erase your personal data or cease processing it, subject to certain exceptions;
-        li ask us to pass your information to other companies or organisations upon your written request (when technically feasible);
+      else
+        h2 1. General Provisions
+        p This personal data processing policy has been compiled in accordance with the requirements of Federal Law No. 152-FZ dated July 27, 2006 “On Personal Data” and determines the procedure for processing personal data and taking measures to ensure the security of personal data of the individual entrepreneur Gleb Vladimirovich Gorokhov (hereinafter referred to as the Operator).
+        p The Operator sets the observance of the rights and freedoms of a person and citizen when processing their personal data, including the protection of the rights to privacy, personal and family secrets as their most important goal and condition for performing his activity.
+        p This Operator’s policy in relation to processing of personal data (hereinafter – the Policy) is applied to all information the Operator can obtain about visitors of the website <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>.
 
-      p In respect to your personal data you have the right to:
+        h2 2. Basic Concepts Used in the Policy
+        ul
+          li Automated processing of personal data – processing of personal data by using computers,
+          li Blocking of personal data – temporary cease of processing personal data (unless it is necessary to clarify personal data),
+          li Website is a set of graphic and information materials, as well as computer software and databases, ensuring their availability on the Internet at the network address <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>,
+          li Personal Data Information System is a set of personal data contained in databases, and information technologies and technical means ensuring their processing,
+          li De-personalization of personal data is actions that result in the impossibility to determine whether the personal data belong to a certain User or another subject of personal data without using additional information,
+          li Personal data processing is any action (operation) or a set of actions (operations) performed by using automation tools or without using such tools with personal data, including collection, recording, systematization, accumulation, storage, clarification (update, change), retrieval , use, transfer (distribution, provision, access), depersonalization, blocking, deletion, destruction of personal data,
+          li Operator is a state body, municipal body, legal or natural person, independently or jointly with other persons organizing and (or) processing personal data, as well as determining the purposes of personal data processing, the composition of personal data to be processed, actions (operations) committed with personal data,
+          li Personal data are any information related directly or indirectly to a certain or definable User of the <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a> website,
+          li User is any visitor of the website <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>,
+          li Provision of personal data is actions aimed at disclosing personal data to a certain person or a certain group of persons,
+          li Distribution of personal data is any actions aimed at disclosing personal data to an indefinite number of persons (transfer of personal data) or letting read personal data by an unlimited number of persons, including public disclosure of personal data in the media, placement in information and telecommunication networks or provision access to personal data in any other way,
+          li Cross-border transfer of personal data is transfer of personal data to the territory of a foreign state to the authority of a foreign state, foreign natural or foreign legal entity, and
+          li Destruction of personal data is any actions that result in destructing personal data irrevocably without the possibility to further restore the content of personal data in the personal data information system and/or in the destruction of material carriers of personal data.
 
-      ol
-        li request access to the personal data that we hold about you or a copy of it;
-        li correct (rectify) your personal data if it is inaccurate;
-        li erase your personal data or cease processing it, subject to certain exceptions;
-        li ask us to pass your information to other companies or organisations upon your written request (when technically feasible);
+        h2 3. The operator can process the following personal data of the User
+        ul
+          li Full name,
+          li Email address,
+          li Phone numbers,
+          li Country, and
+          li Contacts in Skype and Telegram services.
+        p Besides, the website collects and processes impersonal data about visitors (including cookies) using Internet statistics services (Yandex Metrika and Google Analytics, etc.).
+        p The above data is hereinafter referred to as Personal Data.
 
-      p We have put in place appropriate physical, electronic, and managerial procedures to safeguard and secure the information we collect online to prevent unauthorized access, maintain data accuracy, and ensure the correct use of information.
+
+        h2 4. Purpose of Processing Personal Data
+        p The purpose of processing the User’s personal data is to estimate the cost and terms of the project, to inform about the results of the estimation, and to discuss the cooperation possibility.
+        p The Operator has also the right to send notices to the User about new products and services, special offers and various events. The User can always refuse from informational messages by sending an email to the Operator at <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> with the note “Refusal from notices about new products and services and special offers”.
+        p Impersonal data of Users collected by using Internet statistics services are used to collect information about the Users’ actions on the website, and improve the quality of the website and its content.
+
+        h2 5. Legal Grounds for Processing Personal Data
+        p The Operator processes the User’s personal data only if it is filled out and/or sent by the User independently through special forms located on the website <a href="https://verstaburo.com" target="_blank">https://verstaburo.com</a>. By filling out the appropriate forms and/or sending his personal data to the Operator, the User agrees with this Policy.
+        p The Operator processes the impersonal data about the User in case it is allowed in the settings of the User’s browser (it includes saving cookies and using the JavaScript technology).
+
+        h2 6. Procedure for Collection, Storage, Transfer and Other Types of Processing Personal Data
+        p The personal data processed by the Operator is protected by taking legal, organizational and technical measures required to fully comply with the current legislation related to protecting personal data.
+        p The Operator ensures the safety of personal data and takes all possible measures to prevent access of unauthorized persons to personal data.
+        p The User’s personal data will never, under any circumstances, be transferred to any third parties, except in cases related to the compliance with the current legislation.
+        p In case of detecting inaccuracies in personal data, the User can update them independently by e-mailing a notice to the Operator <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> marked as “Actualization of Personal Data”.
+        p The term for processing personal data is unlimited. The User may at any time withdraw his consent to processing of personal data by e-mailing a notice to the Operator <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a> marked “Withdrawal of consent to processing of personal data”.
+
+        h2 7. Cross-Border Transfer of Personal Data
+        p Prior to the cross-border transfer of personal data, the Operator must ensure that the foreign state where it is planned to transfer personal data to reliably protects the rights of personal data holders.
+        p Cross-border transfer of personal data on the territory of foreign countries that do not meet the above requirements can only be carried out if there is a written consent of the holder of personal data on the cross-border transfer of his personal data and/or performance of the contract where a party is the holder of personal data.
+
+        h2 8. Final Provisions
+        p The User can ask and get the answer to any questions related to processing of his personal data by contacting the Operator via email <a href="mailto:hello@verstaburo.com" target="_blank">hello@verstaburo.com</a>.
+        p This document will reflect any changes in the personal data processing policy made by the Operator. The policy is unlimited until replaced by a new version.
+        p The current version of the Policy is freely available on the Internet at <a href="https://verstaburo.com" target="_blank">https://verstaburo.com/policy.html</a>

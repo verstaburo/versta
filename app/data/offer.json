@@ -7,5 +7,14 @@
       "link": "#works",
       "text": "Примеры работ"
     }
+  },
+  "index_en": {
+    "image": "assets/images/window.svg",
+    "title": "Trust the front-end part of your projects to the reliable team",
+    "text": "We code websites with 99% accuracy of compliance with layouts from 1 day.<br> According to your or our development standards.",
+    "button": {
+      "link": "#works",
+      "text": "Work samples"
+    }
   }
 }

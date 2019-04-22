@@ -1,18 +1,35 @@
 [
-  {
-    "image": "assets/images/agencies/binn.svg",
-    "link": "https://www.binn.ru/",
-    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора.",
-    "letter": "assets/images/letters/binn.png"
-  },
-  {
-    "image": "assets/images/agencies/agima.svg",
-    "link": "https://www.binn.ru/",
-    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора."
-  },
-  {
-    "image": "assets/images/agencies/oktaeder.svg",
-    "link": "https://www.binn.ru/",
-    "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора."
-  }
+  [
+    {
+      "image": "assets/images/agencies/binn.svg",
+      "link": "https://www.binn.ru/",
+      "text": "Интернет-агентство BINN с 2001 года разрабатывает и сопровождает корпоративные сайты и веб-сервисы для крупных компаний преимущественно из финансового и автомобильного сектора.",
+      "letter": "assets/images/letters/binn.jpg"
+    },
+    {
+      "image": "assets/images/agencies/dezi.svg",
+      "link": "https://dezidesign.ru/",
+      "text": "Dezi создает красивый дизайн, который решает важные задачи. Это команда, создающая красивые и удобные сайты и рекламные материалы. Уже более 12 лет Dezi помогает компаниям найти свой впечатляющий визуальный образ."
+    },
+    {
+      "image": "assets/images/agencies/serenity.svg",
+      "link": "https://serenity.agency/",
+      "text": "Serenity увеличивает прибыль любимых клиентов за счёт комплексного маркетинга. Развивает свой подход, обучает в школе и на семинарах. Проводит лучшую бизнес-конференцию в Петербурге. И стремится делать мир лучше."
+    }
+  ],
+  [
+    {
+      "link": "https://www.binn.ru/",
+      "text": "Since 2001, the BINN Internet agency has been developing and maintaining corporate websites and web services for large companies, operating primarily in financial and automotive sectors.",
+      "letter": "assets/images/letters/binn.jpg"
+    },
+    {
+      "link": "https://dezidesign.ru/",
+      "text": "Dezi creates a beautiful design that solves important problems. This is a team that creates beautiful and convenient websites and promotional materials. For over 12 years, Dezi has been helping companies to find their impressive visuals."
+    },
+    {
+      "link": "https://serenity.agency/",
+      "text": "Serenity increases the profit of your favorite customers through integrated marketing. It develops its approach, teaches at school and during seminars. It organizes the best business conference in St. Petersburg. It strives for making the world better."
+    }
+  ]
 ]

@@ -1,5 +1,5 @@
 mixin cta()
   +b.cta&attributes(attributes)
-    +e.H2.title.js-sr.js-sr_1 Есть проект? Получите оценку стоимости и сроков в течение суток
-    +e.P.text.js-sr.js-sr_1 Избавьтесь от головной боли из-за безответственных подрядчиков
-    +button(false, true)(href="#")._big.__button.js-sr.js-sr_1 Получить оценку проекта
+    +e.H2.title.js-sr.js-sr_1!= en ? 'Do you have a project? Find out about the price and terms within&nbsp;a&nbsp;day' : 'Есть проект? Получите оценку стоимости и сроков в течение суток'
+    +e.P.text.js-sr.js-sr_1!= en ? 'Get rid of headaches because of irresponsible contractors' : 'Избавьтесь от головной боли из-за безответственных подрядчиков'
+    +button(false, true)(href="#start")._big.__button.js-sr.js-sr_1.js-fancybox!= en ? 'Let us estimate your project!' : 'Получить оценку проекта'

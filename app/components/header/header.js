@@ -28,7 +28,9 @@ export function burgerClose () {
 export default function header () {
   // Бургер-кнопка
   $(document).on('click', '.js-burger-button', function () {
-    $(this).hasClass('is-active') ? burgerClose() : burgerOpen();
+    if (!$(this).parents('.header').hasClass('is-popup-active')) {
+      $(this).hasClass('is-active') ? burgerClose() : burgerOpen();
+    }
   });
 
   // Работа ссылок при скролле
@@ -53,6 +55,11 @@ export default function header () {
         link.removeClass('is-active');
       }
     });
+  });
+
+  // Закрываем бургер при ресайзе
+  $(window).resize(function () {
+    if (burgerMenu.hasClass('is-active') && $(window).width() > globalOptions.sizes.md) burgerClose();
   });
 };
 /* eslint-enable */

@@ -43,6 +43,11 @@
   display: none;
 }
 
+.fancybox-container {
+  transition-duration: 0s !important;
+  opacity: 1 !important;
+}
+
 .popup {
   position: fixed;
   top: 0;
@@ -54,4 +59,25 @@
   z-index: 10;
   padding: 0 0 20px;
   color: white;
+
+  .page__title, .page__description, .page__content {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: transform .8s cubic-bezier(0.6, 0.2, 0.1, 1), opacity .8s cubic-bezier(0.6, 0.2, 0.1, 1);
+  }
+
+  &.is-animated {
+    .page__description {
+      transition-delay: .1s;
+    }
+
+    .page__content {
+      transition-delay: .2s;
+    }
+
+    .page__title, .page__description, .page__content {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
 }

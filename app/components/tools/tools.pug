@@ -8,4 +8,4 @@ mixin tools()
               img(src=tool.image)
 
       +col({xl: 4, lg: 12}).tools__texts
-        +e.H2.text.js-sr.js-sr_1 Используем современные решения и сервисы для <span>лучшего результата</span>
+        +e.H2.text.js-sr.js-sr_1!= en ? 'We use modern solutions and services for <span>best results</span>' : 'Используем современные решения и сервисы для <span>лучшего результата</span>'

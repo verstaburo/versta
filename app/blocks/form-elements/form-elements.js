@@ -1,18 +1,29 @@
 /* eslint-disable */
+import {burgerClose} from "../../components/header/header";
+
 const $ = window.$;
 const grecaptcha = window.grecaptcha;
-const fancyOptions = {
-  afterLoad: function () {
+
+window.fancyOptions = {
+  afterLoad: function (instance, current) {
+    if ($(document).find('.js-burger-menu').hasClass('is-active')) burgerClose();
     freeze();
     $('.header').addClass('is-popup-active');
-    $('.grecaptcha-badge').addClass('is-visible');
   },
-  beforeClose: function () {
+  afterShow: function (instance, current) {
+    $(current.src).addClass('is-animated');
+  },
+  beforeClose: function (instance, current) {
+  },
+  afterClose: function (instance, current) {
     unfreeze();
+    $(current.src).removeClass('is-animated');
     $('.header').removeClass('is-popup-active');
-    $('.grecaptcha-badge').removeClass('is-visible');
   },
   touch: false,
+  closeExisting: true,
+  animationDuration: 200,
+  transitionDuration: 200,
 };
 
 // https://www.npmjs.com/package/sumoselect
@@ -34,26 +45,26 @@ export function validation() {
   parsley;
 }
 
-// function validate (form) {
-//   const el = form;
-//
-//   $('#form').parsley();
-// }
-
 export function forms() {
   const form = $('.js-form');
 
-  // Капча
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6LeE-p0UAAAAAPbdoOFxb3nScdUQk11s8M080Bwt', {
-      action: 'startproject',
-    }).then(function (token) {
+  form.submit(function (e) {
+    e.preventDefault();
 
-      form.prepend(`<input type="hidden" name="token" value="${token}">`);
-      form.submit(function (e) {
-        e.preventDefault();
+    const thisForm = $(this);
 
-        const thisForm = $(this);
+    // Recaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LeE-p0UAAAAAPbdoOFxb3nScdUQk11s8M080Bwt', {
+        action: 'startproject',
+      }).then(function (token) {
+
+        // Добавляем инпут с токеном проверки
+        if (thisForm.find('input[name="token"]').length > 0) {
+          thisForm.find('input[name="token"]').val(token);
+        } else {
+          thisForm.prepend(`<input type="hidden" name="token" value="${token}">`);
+        }
 
         // Проверка капчи
         $.ajax({
@@ -71,6 +82,7 @@ export function forms() {
                 url: 'assets/php/send.php',
                 data: thisForm.serializeArray(),
                 success: function (data) {
+                  window.yaCounter52590535.reachGoal('formSubmit');
 
                   // Перенести в попап успеха
                   $.fancybox.open($('#success'), fancyOptions);
@@ -78,14 +90,15 @@ export function forms() {
               });
 
             } else {
-              console.log('Тест на капчу не пройден');
+              alert('Seems like you are robot. Try again.');
             }
           },
         });
 
-        return false;
       });
     });
+
+    return false;
   });
 }
 /* eslint-enable */

@@ -1,0 +1,76 @@
+extends ../../layouts/default_en
+
+block head
+  - var pageTitle = en ? 'Bank details and documents - Versta' : 'Реквизиты и документы - Versta'
+
+block content
+  +page((en ? 'Bank details and documents' : 'Реквизиты и документы'), false, true)
+    +content-zone.js-sr.js-sr_1
+      h2!= en ? 'Company details' : 'Реквизиты компании'
+
+      table(cellspacing=0 cellpadding=0)
+        tr
+          td
+            b!= en ? 'TIN' : 'ИНН'
+          td 632147177207
+        tr
+          td
+            b!= en ? 'OGRNIP' : 'ОГРНИП'
+          td 314632005700037
+        tr
+          td
+            b!= en ? 'Certificate of SP state registration' : 'Свидетельство о гос. регистрации ИП'
+          td 63 006084415
+        tr
+          td
+            b!= en ? 'Date of registration' : 'Дата регистрации'
+          td!= en ? 'February 26, 2014' : '26 февраля 2014'
+        tr
+          td
+            b!= en ? 'Legal address' : 'Юр. адрес'
+          td!= en ? '24, Marshal Zhukov St., Apt. 2, Togliatti, 445051, Russian Federation' : 'РФ, 445051, г. Тольятти, ул. Маршала Жукова, д. 24, кв. 2'
+        tr
+          td
+            b!= en ? 'Postal and actual address' : 'Почтовый и фактический адрес'
+          td!= en ? '24, Marshal Zhukov St., Apt. 2, Togliatti, 445051, Russian Federation' : 'РФ, 445051, г. Тольятти, ул. Маршала Жукова, д. 24, кв. 2'
+
+      h2!= en ? 'Main account' : 'Основной счет'
+
+      table(cellspacing=0 cellpadding=0)
+        tr
+          td
+            b!= en ? 'Bank' : 'Банк'
+          td!= en ? 'TINKOFF BANK JSC MOSCOW' : 'АО "ТИНЬКОФФ БАНК" г. МОСКВА'
+        tr
+          td
+            b!= en ? 'Settlement account' : 'Расчётный счёт'
+          td 40802810100000680064
+        tr
+          td
+            b!= en ? 'Correspondent account' : 'Корреспондентский счёт'
+          td 30101810145250000974
+        tr
+          td
+            b!= en ? 'RCBIC' : 'БИК'
+          td 044525974
+        tr
+          td
+            b!= en ? 'Account currency' : 'Валюта счёта'
+          td!= en ? 'Russian ruble' : 'Российский рубль'
+
+      p!= en ? 'Euro and Dollar accounts coming soon.' : 'Валютные счета будут открыты в ближайшее время.'
+
+      h2 PayPal
+
+      p
+        a(href="https://www.paypal.me/verstaburo" target="_blank") https://www.paypal.me/verstaburo
+
+      h2!= en ? 'Legal documents' : 'Юридические документы'
+
+      ul
+        li
+          a(href="assets/documents/versta_ip.pdf" target="_blank")!= en ? 'Certificate of SP registration' : 'Свидетельство о регистрации ИП'
+        li
+          a(href="assets/documents/versta_inn.pdf" target="_blank")!= en ? 'TIN Certificate' : 'Свидетельство ИНН'
+        li
+          a(href="assets/documents/versta_egrip.pdf" target="_blank")!= en ? 'Extract from the Uniform State Register of Individual Entrepreneurs' : 'Выписка из ЕГРИП (16.04.2019)'

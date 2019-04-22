@@ -1,7 +1,7 @@
 mixin footer()
   +b.footer&attributes(attributes)
     .container
-      each section in getData('footer')
+      each section in (en ? getData('footer')[1] : getData('footer')[0])
         +e.col
           +e.H4.title!= section.title
           +e.UL.list
@@ -20,5 +20,5 @@ mixin footer()
           +icon('logo')
 
         +e.copyright
-          p © Versta, Бюро фронтенд-разработки, 2016-2019
-          p ИП Горохов Г. В., ОГРНИП 314632005700037
+          p!= en ? '© Versta, Front-End Development Bureau, 2016-2019' : '© Versta, Бюро фронтенд-разработки, 2016-2019'
+          p!= en ? 'SP Gorokhov G.V., OGRNIP 314632005700037' : 'ИП Горохов Г. В., ОГРНИП 314632005700037'

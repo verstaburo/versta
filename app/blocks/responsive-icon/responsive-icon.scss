@@ -6,7 +6,9 @@ $ease-icon: .2s ease;
   height: 200px;
   position: relative;
 
-  @include rule(margin, (md: 0 auto));
+  @include rule(margin, (md: 0 auto, sm: 0 auto -110px));
+  @include rule(transform, (sm: scale(.5)));
+  @include rule(transform-origin, (sm: center top));
 
   $b: &;
 

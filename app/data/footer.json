@@ -1,43 +1,65 @@
 [
-  {
-    "title": "Посетителям и партнерам",
-    "links": [
-      {
-        "name": "Реквизиты",
-        "href": "#"
-      },
-      {
-        "name": "Документы",
-        "href": "#"
-      },
-      {
-        "name": "Условия использования",
-        "href": "#"
-      },
-      {
-        "name": "Политика конфиденциальности",
-        "href": "#"
-      },
-      {
-        "name": "NDA",
-        "href": "#"
-      }
-    ]
-  },
-  {
-    "title": "Контакты",
-    "links": [
-      {
-        "name": "+7 (8482) 65-00-38",
-        "href": "tel:+7 (8482) 65-00-38"
-      },
-      {
-        "name": "hello@verstaburo.com",
-        "href": "mailto:hello@verstaburo.com"
-      },
-      {
-        "github": true
-      }
-    ]
-  }
+  [
+    {
+      "title": "Посетителям и партнерам",
+      "links": [
+        {
+          "name": "Реквизиты и документы",
+          "href": "details.html"
+        },
+        {
+          "name": "Политика конфиденциальности",
+          "href": "policy.html"
+        }
+      ]
+    },
+    {
+      "title": "Контакты",
+      "links": [
+        {
+          "name": "+7 (8482) 65-00-38",
+          "href": "tel:+7 (8482) 65-00-38"
+        },
+        {
+          "name": "hello@verstaburo.com",
+          "href": "mailto:hello@verstaburo.com"
+        },
+        {
+          "github": true
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "title": "For visitors and partners",
+      "links": [
+        {
+          "name": "Bank details and documents",
+          "href": "details.html"
+        },
+        {
+          "name": "Privacy Policy",
+          "href": "policy.html"
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "links": [
+        {
+          "name": "+7 (8482) 65-00-38",
+          "href": "tel:+7 (8482) 65-00-38"
+        },
+        {
+          "name": "hello@verstaburo.com",
+          "href": "mailto:hello@verstaburo.com"
+        },
+        {
+          "github": true
+        }
+      ]
+    }
+  ]
 ]
+

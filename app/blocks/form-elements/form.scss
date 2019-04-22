@@ -26,6 +26,16 @@
     }
   }
 
+  &__text {
+    @include text-mini;
+
+    color: $color-grey;
+
+    a {
+      @extend %link;
+    }
+  }
+
   &__col {
 
     &_left {
