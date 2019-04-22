@@ -26,8 +26,8 @@
 
   &__tool {
     @include rule(margin, (xl: 20px 30px, md: 15px 25px, sm: 10px 15px));
-
-    opacity: .2;
+    @include rule(opacity, (xl: .2, md: .5));
+    
     filter: grayscale(100%);
     transform: scale(.9);
     transition: opacity $ease-main, filter $ease-main, transform $ease-main;
