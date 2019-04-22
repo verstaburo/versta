@@ -9,6 +9,11 @@ const $ = window.$;
 
 export default function popups() {
   window.fancyOptions = {
+    beforeClose: function (instance, current) {
+      unfreeze();
+      $(current.src).removeClass('is-animated');
+      $('.header').removeClass('is-popup-active');
+    },
     afterLoad: function (instance, current) {
       if ($(document).find('.js-burger-menu').hasClass('is-active')) burgerClose();
       freeze();
@@ -16,13 +21,6 @@ export default function popups() {
     },
     afterShow: function (instance, current) {
       $(current.src).addClass('is-animated');
-    },
-    beforeClose: function (instance, current) {
-    },
-    afterClose: function (instance, current) {
-      unfreeze();
-      $(current.src).removeClass('is-animated');
-      $('.header').removeClass('is-popup-active');
     },
     touch: false,
     closeExisting: true,

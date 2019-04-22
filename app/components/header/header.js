@@ -28,7 +28,7 @@ export function burgerClose () {
 export default function header () {
   // Бургер-кнопка
   $(document).on('click', '.js-burger-button', function () {
-    if (!$(this).parents('.header').hasClass('is-popup-active')) {
+    if (!$(this).parents('.header').hasClass('is-popup-active') && $(document).find('.popup.fancybox-content').length === 0 || undefined) {
       $(this).hasClass('is-active') ? burgerClose() : burgerOpen();
     }
   });

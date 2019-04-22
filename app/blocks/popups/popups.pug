@@ -73,7 +73,7 @@ mixin popup-start()
 
   mixin popup-success()
     +popup()#success
-      +page((en ? 'Your request has been sent successfully!' : 'Ваш запрос успешно отправлен!'), (en ? 'Thank you for your trust; we will contact you as soon as we see your letter.' : 'Спасибо за доверие, мы свяжемся с вами как только увидим письмо.'))._small
+      +page((en ? 'Your request has been sent successfully!' : 'Ваш запрос успешно отправлен!'), (en ? 'Thank you for your trust. We will contact you as soon as we see your letter.' : 'Спасибо за доверие, мы свяжемся с вами как только увидим письмо.'))._small
         +content-zone
           img(src="assets/images/dog_3.webp")
           p!= en ? 'You may choose not to wait and contact us by using details below.' : 'Вы можете не ждать и связаться с нами сами по контактам ниже.'

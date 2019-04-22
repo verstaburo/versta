@@ -4,28 +4,6 @@ import {burgerClose} from "../../components/header/header";
 const $ = window.$;
 const grecaptcha = window.grecaptcha;
 
-window.fancyOptions = {
-  afterLoad: function (instance, current) {
-    if ($(document).find('.js-burger-menu').hasClass('is-active')) burgerClose();
-    freeze();
-    $('.header').addClass('is-popup-active');
-  },
-  afterShow: function (instance, current) {
-    $(current.src).addClass('is-animated');
-  },
-  beforeClose: function (instance, current) {
-  },
-  afterClose: function (instance, current) {
-    unfreeze();
-    $(current.src).removeClass('is-animated');
-    $('.header').removeClass('is-popup-active');
-  },
-  touch: false,
-  closeExisting: true,
-  animationDuration: 200,
-  transitionDuration: 200,
-};
-
 // https://www.npmjs.com/package/sumoselect
 import autosize from 'autosize';
 
@@ -52,6 +30,15 @@ export function forms() {
     e.preventDefault();
 
     const thisForm = $(this);
+    let hasEmpty = false;
+
+    thisForm.find('[required]').each(function () {
+      if ($(this).val().length < 1 || undefined) hasEmpty = true;
+      if ($(this).attr('type') === "checkbox" && !$(this).prop('checked')) hasEmpty = true;
+      if ($(this).hasClass('parsley-error')) hasEmpty = true;
+    });
+
+    if (hasEmpty) return;
 
     // Recaptcha
     grecaptcha.ready(function() {
@@ -85,7 +72,7 @@ export function forms() {
                   window.yaCounter52590535.reachGoal('formSubmit');
 
                   // Перенести в попап успеха
-                  $.fancybox.open($('#success'), fancyOptions);
+                  $.fancybox.open($('#success'), window.fancyOptions);
                 },
               });
 
