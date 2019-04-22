@@ -4,7 +4,7 @@ const $ = window.$;
 import Dropzone from 'dropzone';
 
 export default function dropzones() {
-  const filePath = 'https://new.verstaburo.com/assets/files/uploads/';
+  const filePath = 'https://verstaburo.com/assets/files/uploads/';
   const myDropzone = new Dropzone('.js-dropzone', {
     url: 'assets/files/upload.php',
     addRemoveLinks: true,

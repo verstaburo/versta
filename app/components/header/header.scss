@@ -47,12 +47,13 @@
       z-index: 0;
       box-sizing: border-box;
       padding: 120px 40px 40px;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: auto;
       flex-wrap: wrap;
       opacity: 0;
       transition: opacity $ease-main;
       display: none;
+      flex-direction: column;
 
       &.is-active {
         opacity: 1;
@@ -106,7 +107,7 @@
 
     @include rule(padding, (md: 30px 0));
     @include rule(width, (md: 100%));
-    @include rule(margin, (md: auto 0));
+    @include rule(margin, (md: 0));
 
     #{$b}.is-popup-active & {
       @include screen('md', min) {
@@ -126,7 +127,7 @@
     transition: opacity $ease-main, transform $ease-main;
 
     @include rule(order, (md: -1));
-    @include rule(margin-bottom, (md: auto));
+    @include rule(margin-bottom, (md: 0));
     @include rule(width, (md: 100%));
 
 
@@ -203,7 +204,7 @@
   &__contacts-block-wrapper {
     @include rule(display, (xl: none, md: block));
     @include rule(width, (md: 100%));
-    @include rule(margin-top, (md: auto));
+    @include rule(margin-top, (md: 20px));
   }
 
   &__contacts-block {
